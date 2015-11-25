@@ -1,0 +1,34 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>-->
+<div class="banner_wrap">
+    <div class="bg" data-ng-style="{'background-image': 'url(' + sermon.Art + ')'}">
+        <div layout="column" layout-align="center center" class="slider_content">
+            <div class="listen-button" data-ng-click="RedirectToSermon(sermon.ID);"><i class="material-icons md-48">play_circle_filled</i></div>
+        </div>
+    </div>
+</div>
+<div class="banner-margin"></div>
+<div class="main_content">
+    <div class="sermons-grid-wrap">
+        <div class="sermons-grid">
+            <div class="sermon-grid-comp" data-ng-repeat="ser in archive">
+                <a data-ng-href="{{ser.SeriesID == '0' ? GetSermonURL(ser.ID) : GetSeriesURL(ser.SeriesID)}}">
+                    <div class="sermons-art">
+                        <img src="#" data-ng-src="{{ser.SeriesID == '0' ? ser.SmallArt : series.find('ID',ser.SeriesID).SmallArt}}" alt="" />
+                        <div class="grid-type">
+                            <span class="name">{{ser.SeriesID == 0 ? ser.Name : series.find('ID',ser.SeriesID).Name }}</span>
+                            <span class="date">({{ser.On | dateCustom}})</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--</body>
+</html>-->

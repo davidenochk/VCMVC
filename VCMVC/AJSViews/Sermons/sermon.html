@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/audioplayer.css" rel="stylesheet" />
+    <script src="../js/audioplayer.min.js"></script>
+    <script type="text/javascript">
+        $('#listen-button').click(function () {
+            $('#divListen').css('display', 'block');
+        });
+    </script>
+</head>
+<body>
+    <div id="content-wrap" data-ng-controller="SermonController" data-ng-cloak="">
+        <div class="banner_wrap">
+            <div class="bg mobile-image back-center" data-ng-style="{'background-image': 'url(' + GetArt(sermon) + ')'}">
+                <div class="slider_content">
+                </div>
+            </div>
+        </div>
+        <div class="banner-margin"></div>
+        <div data-layout="row" data-layout-align="center center" class="listen-wrapper" style="display:none;" id="divListen">
+            
+        </div>
+        <div class="main_content">
+            <div class="lg-text">Sermon : {{sermon.Name}}</div>
+            <div class="content" data-ng-bind-html="sermonDescription">
+            </div>
+            <div data-layout="row" data-layout-sm="column" data-layout-align="center center">
+                <div id="listen-button" class="lg-btn lg-btn-dk" data-ng-click="PlayAudio()">Listen</div>
+                <div class="lg-btn lg-btn-lt" data-ng-click="DownloadSermon()">Download</div>
+            </div>
+            <a data-ng-href="{{sermon.Audio}}" id="download-link"></a>
+        </div>
+    </div>
+</body>
+</html>

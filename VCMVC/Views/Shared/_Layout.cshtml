@@ -1,0 +1,213 @@
+﻿<html data-ng-app="vc3app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/" />
+    <title>C3 Victory Secunderabad - GROW • BUILD • INFLUENCE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shorcut icon" type="image/x-icon" href="../Images/favicon.ico" />
+    <meta name="description" content="C3 CHURCH SECUNDERABAD IS ONE OF THE CONTEMPORARY CHURCHES IN HYDERABAD AND SECUNDERABAD WITH BURDEN FOR URBAN YOUTH, PASSIONATE TO PRAISE, WORSHIP AND GLORIFY GOD AND EMPOWER THE WEAK WITH THE WORD OF GOD." />
+    <meta name="keywords" content="C3 CHURCH, C3 VICTORY SECUNDERABAD, C3 Church Secunderabad, C3 Victory, C3 India, church near clock tower, VC3 Church, churches in secunderabad, youth church, christian music, christian, christ centered, pentecostal, spirit filled, churches in hyderabad, friends, hang out" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="lib/angular-material/angular-material.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/fonts.css" rel="stylesheet" />
+
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-animate/angular-animate.min.js"></script>
+    <script src="lib/angular-aria/angular-aria.min.js"></script>
+    <script src="lib/angular-material/angular-material.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="lib/angularfire/dist/angularfire.min.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="js/Utils.js"></script>
+    <script src="js/app.js"></script>
+
+    <script src="AJSViews/Archive/ArchiveService.js"></script>
+    <script src="AJSViews/Archive/ArchiveController.js"></script>
+
+    <script src="AJSViews/Sermons/SeriesService.js"></script>
+    <script src="AJSViews/Sermons/SeriesController.js"></script>
+
+    <script src="AJSViews/Sermons/SermonService.js"></script>
+    <script src="AJSViews/Sermons/SermonController.js"></script>
+
+    <script src="AJSViews/Home/HomeService.js"></script>
+    <script src="AJSViews/Home/HomeController.js"></script>
+
+    <script src="~/AJSViews/Contact/ContactController.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.second-nav-header li').click(function () {
+                var $target = $($(this).attr('class'));
+                if ($($target).html() == undefined)
+                    $target = $('div.' + $(this).attr('class'));
+                if ($target.length) {
+                    var targetOffset = $target.offset().top - 70;
+                    console.log(targetOffset);
+                    $('html,body')
+                    .animate({ scrollTop: targetOffset }, 1000);
+                    return false;
+                }
+            });
+            $('.menu-icon').click(function () {
+                if ($('#navv-menu li').css('display') == 'none')
+                    $('#navv-menu li').css('display', 'block');
+                else if ($('#navv-menu li').css('display') == 'block')
+                    $('#navv-menu li').css('display', 'none');
+            });
+            $('.menu-icon').on('tap', function () {
+                if ($('#navv-menu li').css('display') == 'none')
+                    $('#navv-menu li').css('display', 'block');
+                else if ($('#navv-menu li').css('display') == 'block')
+                    $('#navv-menu li').css('display', 'none');
+            });
+            $(window).resize(function () {
+                if ($(window).width() > 800) {
+                    $('#navv-menu li').css('display', 'block');
+                }
+                else
+                    $('#navv-menu li').css('display', 'none');
+            });
+        });
+    </script>
+    <script>
+        function CloseMenu() {
+            $('#side-menu').removeClass('visible').addClass('hidden');
+        };
+        function OpenMenu() {
+            $('#side-menu').removeClass('hidden').addClass('visible');
+        }
+        $(function () {
+            //Open close menu on click
+            $('#menu-icon').click(function () {
+                if ($('#side-menu').hasClass('visible')) { CloseMenu(); }
+                else { OpenMenu(); };
+            });
+            //Animations to the menu close button
+            $('.close').mouseenter(function () {
+                $(this).addClass('rotate').removeClass('unrotate');
+            }).mouseleave(function () {
+                $(this).removeClass('rotate').addClass('unrotate');
+            });
+            $('#side-menu ul li').click(function () { CloseMenu(); });
+            $('#side-menu .close').click(function () { CloseMenu(); });
+            //Handle outside click to close the side-menu
+            //$('.container').click(function () { CloseMenu(); });
+            //$('#content-wrap').click(function () { CloseMenu(); });
+        })
+    </script>
+</head>
+<body data-ng-controller="MainCtrl" data-ng-cloak="">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none; width: 0; height: 0;">
+        <defs>
+            <filter id="svgbg" x="0" y="0">
+                <feColorMatrix in="SourceGraphic" type="saturate" values="0.4"></feColorMatrix>
+            </filter>
+        </defs>
+    </svg>
+    <div id="top-bar" layout="row" layout-align="start center">
+        <img src="../../Images/church-logo-white.png" class="logo svglogo" />
+    </div>
+    <div id="side-menu" class="hidden">
+        <div class="close">X</div>
+        <div id="menu-icon">
+            <md-icon md-svg-icon="navigation:menu"></md-icon><span>Menu</span>
+        </div>
+        <ul>
+            <li>
+                <a href="/home">Home</a>
+                <!--<asp:HyperLink ID="hplinkMenuHome" runat="server" NavigateUrl="../Presentation/Home" Text="Home"><md-icon md-svg-icon="action:home"></md-icon>Home</asp:HyperLink>-->
+            </li>
+            <li>
+                <a href="/learn-more">Learn More</a>
+                <!--<asp:HyperLink ID="hplinkMenuAbout" runat="server" NavigateUrl="../Presentation/About" Text="About Us"><md-icon md-svg-icon="action:info_outline"></md-icon>About</asp:HyperLink>-->
+            </li>
+            <li>
+                <a href="/ministries">Ministries</a>
+                <!--<asp:HyperLink ID="hplinkMenuEvents" runat="server" NavigateUrl="../Presentation/Ministries" Text="Ministries"><md-icon md-svg-icon="social:group_add"></md-icon>Ministries</asp:HyperLink>-->
+            </li>
+            <li>
+                <a href="/archive">Sermon Archive</a>
+                <!--<asp:HyperLink ID="hplinkMenuSermons" runat="server" NavigateUrl="../Presentation/Archive" Text="Sermons"><md-icon md-svg-icon="hardware:tv"></md-icon>Sermon Archive</asp:HyperLink>-->
+            </li>
+            <li>
+                <a href="/contact">Contact</a>
+                <!--<asp:HyperLink ID="hplinkMenuContact" runat="server" NavigateUrl="../Presentation/Contact" Text="Contact"><md-icon md-svg-icon="comm:call"></md-icon>Contact</asp:HyperLink>-->
+            </li>
+        </ul>
+    </div>
+    <div id="main-wrap">
+        <div id="content-wrap">
+            <div data-ng-view="" class="container"></div>
+        </div>
+    </div>
+    <div id="footer-wrap" flex>
+        <div data-layout="column" data-layout-align="center center" flex>
+            <div class='upper-footer' data-layout="row" data-layout-align="space-around start">
+                <div data-layout="column" data-layout-align="start start">
+                    <img src="Images/church-logo-white.png" class="logo" alt="logo" />
+                    <ul id="quickLinks">
+                        <li><a href="/archive">Sermon Archive</a></li>
+                        <li><a href="/learn-more">Learn More</a></li>
+                        <li><a href="/get-involved">Get Involved</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                    <div class="social" data-layout="row" data-layout-align="space-between center">
+                        <a href="http://facebook.com/c3victory"><img src="Images/facebook.png" /></a>
+                        <a href="http://twitter.com/c3victorysecbad"><img src="Images/twitter.png" /></a>
+                        <a href="http://instagram.com/c3victorysecbad"><img src="Images/instagram.png" /></a>
+                    </div>
+                </div>
+                <div data-layout="column" layout-align="start start">
+                    <h3>About</h3>
+                    <ul id="about">
+                        <li><a href="/our-beliefs">Our Beliefs</a></li>
+                        <li><a href="/our-leaders">Our Leaders</a></li>
+                        <li><a href="/our-movement">Our Movement</a></li>
+                        <li><a href="/kids-church">Kids Church</a></li>
+                        <li><a href="/ministries">ministries</a></li>
+                    </ul>
+                </div>
+                <div data-layout="column" layout-align="start start">
+                    <h3>Media</h3>
+                    <ul id="media">
+                        <li><a href="/archive">Sermon Archive</a></li>
+                        <li><a href="/missions">Missions</a></li>
+                        <li><a href="/resources">Church Resources</a></li>
+                    </ul>
+                </div>
+                <div data-layout="column" layout-align="start start">
+                    <h3>Contact Us</h3>
+                    <ul id="contact">
+                        <li><a href="/accepting-jesus">Accepting Jesus</a></li>
+                        <li><a href="/need-prayer">Need Prayer</a></li>
+                        <li><a href="/share-your-story">Share your story</a></li>
+                        <li><a href="/get-baptized">Get Baptized</a></li>
+                        <li><a href="/i-have-a-question">I Have A Question</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class='lower-footer'>
+                <span class="xsm-text">C3 Victory Church, Secunderabad. All Rights Reserved. Plot No 90, P&T Colony, Trimulgherry, Hyderabad - 500015, Telangana, India +91 9849189799 <a href="mailto:{{mail_info}}">{{mail_info}}</a></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="progress-wrap" data-ng-show="progress.count > 0">
+        <div data-layout="row" data-layout-sm="column" data-layout-align="center center" flex>
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+    </div>
+    <div style="display:none">
+        @RenderBody()
+    </div>
+</body>
+</html>
