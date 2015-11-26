@@ -180,53 +180,47 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AJSViews\Archive\Archive.html" />
-    <Content Include="AJSViews\Archive\ArchiveController.js" />
-    <Content Include="AJSViews\Archive\ArchiveService.js" />
-    <Content Include="AJSViews\Contact\ContactController.js" />
-    <Content Include="AJSViews\Home\Home.html" />
-    <Content Include="AJSViews\Home\HomeController.js" />
-    <Content Include="AJSViews\Home\HomeService.js" />
-    <Content Include="AJSViews\Sermons\series.html" />
-    <Content Include="AJSViews\Sermons\SeriesController.js" />
-    <Content Include="AJSViews\Sermons\SeriesService.js" />
-    <Content Include="AJSViews\Sermons\sermon.html" />
-    <Content Include="AJSViews\Sermons\SermonController.js" />
-    <Content Include="AJSViews\Sermons\SermonService.js" />
+    <Content Include="partials\Archive\Archive.html" />
+    <Content Include="partials\Archive\ArchiveController.js" />
+    <Content Include="partials\Archive\ArchiveService.js" />
+    <Content Include="partials\Contact\ContactController.js" />
+    <Content Include="partials\Home\Home.html" />
+    <Content Include="partials\Home\HomeController.js" />
+    <Content Include="partials\Home\HomeService.js" />
+    <Content Include="partials\Sermons\series.html" />
+    <Content Include="partials\Sermons\SeriesController.js" />
+    <Content Include="partials\Sermons\SeriesService.js" />
+    <Content Include="partials\Sermons\sermon.html" />
+    <Content Include="partials\Sermons\SermonController.js" />
+    <Content Include="partials\Sermons\SermonService.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="js\Analytics.js" />
     <Content Include="js\app.js" />
     <Content Include="js\audioplayer.min.js" />
-    <Content Include="js\jQuery.js" />
     <Content Include="js\jquery.slides.min.js" />
     <Content Include="js\Utils.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\core\angular-animate.min.js" />
+    <Content Include="Scripts\core\angular-aria.min.js" />
+    <Content Include="Scripts\core\angular-material.min.js" />
+    <Content Include="Scripts\core\angular-route.min.js" />
+    <Content Include="Scripts\core\angular-sanitize.min.js" />
+    <Content Include="Scripts\core\angular.min.js" />
+    <Content Include="Scripts\core\angularfire.min.js" />
+    <Content Include="Scripts\core\bootstrap.min.js" />
+    <Content Include="Scripts\core\firebase.js" />
+    <Content Include="Scripts\core\jquery.min.js" />
     <Content Include="Views\Admin\Admin.html" />
     <Content Include="Views\Admin\AdminController.js" />
     <Content Include="Views\Admin\AdminService.js" />
     <Content Include="Views\Archive\Archive.html" />
     <Content Include="Views\Archive\ArchiveController.js" />
     <Content Include="Views\Archive\ArchiveService.js" />
-    <Content Include="AJSViews\Contact\AcceptingJesus.html" />
-    <Content Include="AJSViews\Contact\Contact.html" />
+    <Content Include="partials\Contact\AcceptingJesus.html" />
+    <Content Include="partials\Contact\Contact.html" />
     <Content Include="Views\Home\Home.html" />
     <Content Include="Views\Home\HomeController.js" />
     <Content Include="Views\Home\HomeService.js" />
@@ -273,18 +267,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="css\" />
+    <Folder Include="css\core\" />
     <Folder Include="icons\" />
     <Folder Include="Images\" />
-    <Folder Include="lib\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
