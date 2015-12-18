@@ -25,6 +25,7 @@
         </div>
         <div class="main_content">
             <div class="lg-text">Sermon : {{sermon.Name}}</div>
+            <div layout="row" layout-padding="" layout-align="center center"><div class="md-text">{{GetSpeakerName(sermon.By)}}</div><div class="md-text">({{sermon.On | dateCustom}})</div></div>
             <div class="content" data-ng-bind-html="sermonDescription">
             </div>
             <div data-layout="row" data-layout-sm="column" data-layout-align="center center">

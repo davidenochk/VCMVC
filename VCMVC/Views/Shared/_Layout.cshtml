@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link href="~/css/core/angular-material/angular-material.min.css" rel="stylesheet" />
+    <link href="~/css/core/angular-material.min.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
     <link href="~/css/main.css" rel="stylesheet" />
     <link href="~/css/fonts.css" rel="stylesheet" />
@@ -26,22 +26,24 @@
     <script src="~/Scripts/core/firebase.js"></script>
     <script src="~/Scripts/core/jquery.min.js"></script>
 
-    <script src="js/Utils.js"></script>
-    <script src="js/app.js"></script>
+    <script src="~/js/Utils.js"></script>
+    <script src="~/js/app.js"></script>
 
-    <script src="partials/Archive/ArchiveService.js"></script>
-    <script src="partials/Archive/ArchiveController.js"></script>
-                 
-    <script src="partials/Sermons/SeriesService.js"></script>
-    <script src="partials/Sermons/SeriesController.js"></script>
-                 
-    <script src="partials/Sermons/SermonService.js"></script>
-    <script src="partials/Sermons/SermonController.js"></script>
-                 
-    <script src="partials/Home/HomeService.js"></script>
-    <script src="partials/Home/HomeController.js"></script>
+    <script src="~/partials/Archive/ArchiveService.js"></script>
+    <script src="~/partials/Archive/ArchiveController.js"></script>
+
+    <script src="~/partials/Sermons/SeriesService.js"></script>
+    <script src="~/partials/Sermons/SeriesController.js"></script>
+
+    <script src="~/partials/Sermons/SermonService.js"></script>
+    <script src="~/partials/Sermons/SermonController.js"></script>
+
+    <script src="~/partials/Home/HomeService.js"></script>
+    <script src="~/partials/Home/HomeController.js"></script>
 
     <script src="~/partials/Contact/ContactController.js"></script>
+
+    <script src="~/partials/Common/MapperController.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -123,26 +125,22 @@
         </div>
         <ul>
             <li>
-                <a href="/home">Home</a>
-                <!--<asp:HyperLink ID="hplinkMenuHome" runat="server" NavigateUrl="../Presentation/Home" Text="Home"><md-icon md-svg-icon="action:home"></md-icon>Home</asp:HyperLink>-->
+                <a href="/home"><i class="menu-sm-icon material-icons">home</i>Home</a>
             </li>
             <li>
-                <a href="/learn-more">Learn More</a>
-                <!--<asp:HyperLink ID="hplinkMenuAbout" runat="server" NavigateUrl="../Presentation/About" Text="About Us"><md-icon md-svg-icon="action:info_outline"></md-icon>About</asp:HyperLink>-->
+                <a href="/learn-more"><i class="menu-sm-icon material-icons">info</i>Learn More</a>
             </li>
             <li>
-                <a href="/ministries">Ministries</a>
-                <!--<asp:HyperLink ID="hplinkMenuEvents" runat="server" NavigateUrl="../Presentation/Ministries" Text="Ministries"><md-icon md-svg-icon="social:group_add"></md-icon>Ministries</asp:HyperLink>-->
+                <a href="/ministries"><i class="menu-sm-icon material-icons">view_headline</i>Ministries</a>
             </li>
             <li>
-                <a href="/archive">Sermon Archive</a>
-                <!--<asp:HyperLink ID="hplinkMenuSermons" runat="server" NavigateUrl="../Presentation/Archive" Text="Sermons"><md-icon md-svg-icon="hardware:tv"></md-icon>Sermon Archive</asp:HyperLink>-->
+                <a href="/archive"><i class="menu-sm-icon material-icons">tv</i>Sermon Archive</a>
             </li>
             <li>
-                <a href="/contact">Contact</a>
-                <!--<asp:HyperLink ID="hplinkMenuContact" runat="server" NavigateUrl="../Presentation/Contact" Text="Contact"><md-icon md-svg-icon="comm:call"></md-icon>Contact</asp:HyperLink>-->
+                <a href="/contact"><i class="menu-sm-icon material-icons">contact_phone</i>Contact</a>
             </li>
         </ul>
+        <social-links></social-links>
     </div>
     <div id="main-wrap">
         <div id="content-wrap">
@@ -160,11 +158,7 @@
                         <li><a href="/get-involved">Get Involved</a></li>
                         <li><a href="/contact">Contact Us</a></li>
                     </ul>
-                    <div class="social" data-layout="row" data-layout-align="space-between center">
-                        <a href="http://facebook.com/c3victory"><img src="Images/facebook.png" /></a>
-                        <a href="http://twitter.com/c3victorysecbad"><img src="Images/twitter.png" /></a>
-                        <a href="http://instagram.com/c3victorysecbad"><img src="Images/instagram.png" /></a>
-                    </div>
+                    <social-links></social-links>
                 </div>
                 <div data-layout="column" layout-align="start start">
                     <h3>About</h3>
@@ -173,7 +167,7 @@
                         <li><a href="/our-leaders">Our Leaders</a></li>
                         <li><a href="/our-movement">Our Movement</a></li>
                         <li><a href="/kids-church">Kids Church</a></li>
-                        <li><a href="/ministries">ministries</a></li>
+                        <li><a href="/ministries">Ministries</a></li>
                     </ul>
                 </div>
                 <div data-layout="column" layout-align="start start">

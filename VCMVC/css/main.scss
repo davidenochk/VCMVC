@@ -1,0 +1,869 @@
+﻿/*#region variables */
+$base-font-size: 1em;
+$banner-max-height: 350px;
+$banner-min-height: 300px;
+$content-min-height: 400px;
+$banner-font-size-lg: $base-font-size*4;
+$banner-font-size-md: $base-font-size*2;
+$banner-font-size-sm: $base-font-size*1;
+$font-size-lg: $base-font-size*3;
+$font-size-md: $base-font-size*2;
+$font-size-sm: $base-font-size*1;
+$font-size-xsm: $base-font-size*0.8;
+$base-vertical-padding: 8px;
+$base-horizontal-padding: 10px;
+$base-vertical-margin: 10px;
+$base-horizontal-margin: 20px;
+$base-padding: 10px;
+$lg-btn-width: auto;
+$lg-btn-min-width: 200px;
+$banner-margin-top: 300px;
+$footer-padding-top:150px;
+$white: #fff;
+$white2: #ddd;
+$black: #262626;
+$black2: #444;
+/*#endregion */
+/*#region Banner(On every content page, add sliding content) */
+*:focus {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+
+    li a {
+        text-decoration: none;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    text-align:left;
+    margin: 0;
+}
+
+.banner_wrap {
+    height: $banner-margin-top;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+
+    .bg {
+        background-position: center 50%;
+        background-size: cover;
+        //background-image: url(../Images/bgs/Web_1.JPG);
+        height: $banner-margin-top;
+        vertical-align: middle;
+
+        .slider_content {
+            min-width: 300px;
+            max-height: $banner-max-height;
+            min-height: $banner-min-height;
+            margin: auto;
+            padding: $base-padding*3;
+            vertical-align: middle;
+            position: relative;
+            color: #FFF;
+
+            .slide {
+                display: block;
+                text-align: center;
+                margin: 20px;
+            }
+        }
+    }
+}
+
+
+.lg-text {
+    font-size: $banner-font-size-lg;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.md-text {
+    font-size: $banner-font-size-md;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.sm-text {
+    font-size: $banner-font-size-sm;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.xsm-text {
+    font-size: $font-size-xsm;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.main_content {
+    text-align: center;
+    background-color: $white;
+    color: $black;
+    display: block;
+    padding: 20px 0;
+    margin: 0 auto;
+    min-height: $content-min-height;
+}
+
+.main_title {
+    color: $black;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.content {
+    font-size: $base-font-size * 1.3;
+    line-height: 1.3;
+    text-align: center;
+    display: block;
+    margin: 0 5px;
+
+    ul {
+        list-style: none;
+
+        li:before {
+            content: '>';
+            margin-right: 10px;
+        }
+    }
+}
+
+#top-bar {
+    z-index: 0;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 9%;
+    min-width: 100px;
+}
+
+#top-bar .logo {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    padding: 8px 3px 0 3px;
+    background-color: transparentize($black,0.7);
+}
+/*#endregion */
+
+/*#region Footer*/
+#footer-wrap {
+    position: relative;
+    width: 100%;
+    background-color: $black;
+}
+
+.upper-footer {
+    background-color: $black;
+    color: $white;
+    padding: 20px 10%;
+    width: 70%;
+    margin:0 auto;
+    padding-top:$footer-padding-top;
+
+    h3{
+        margin-bottom:10px;
+        text-transform:uppercase;
+    }
+
+    a {
+        color: darken($white,30);
+        font-size:$font-size-xsm * 1.2;
+        font-weight:400;
+    }
+    .logo{
+        width:100px;
+    }
+
+    .social{
+        margin-top:20px;
+        width:70%;
+    }
+}
+
+.lower-footer {
+    background-color: darken($black,10);
+    color: $white2;
+    width: 100%;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.lower-footer a {
+    color: $white;
+}
+/*#endregion*/
+
+
+/*#region Side Menu*/
+#side-menu {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    top: 0;
+    background-color: $black;
+    z-index: 99999;
+}
+
+#side-menu ul {
+    margin: 0 auto;
+    position: relative;
+    width: 210px;
+    padding: 20px;
+    color: $white;
+    font-size: 1em;
+    list-style: none;
+    margin-top: 50px;
+}
+
+#side-menu ul li {
+    display: block;
+    text-align: left;
+    margin: 8px 0;
+    padding: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#side-menu ul li a .menu-sm-icon {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    font-size: 24px;
+    color:$white;
+}
+
+#side-menu ul li a {
+    color: #ddd;
+    text-decoration: none;
+    position: relative;
+    line-height: 20px;
+    vertical-align: middle;
+    padding: 3px 7px;
+    font-size: 1em;
+    display: block;
+    border-bottom: 1px solid $black;
+    font-weight: bold;
+    padding-left:40px;
+    letter-spacing:0.5px;
+}
+
+#side-menu ul li a:hover {
+    border-bottom: 1px solid $black2;
+}
+
+#side-menu .close {
+    font-size: 1.2em;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: transparent;
+    cursor: pointer;
+    line-height: 14px;
+    vertical-align: middle;
+    font-weight: normal;
+    background-image:url(../Images/close_side_menu.png);
+    background-repeat:no-repeat;
+}
+
+.rotate {
+    transform-origin: 50% 50%;
+    animation: rotateBtn 1s ease 1 normal;
+    -webkit-animation: rotateBtn 1s ease 1 normal;
+}
+
+.unrotate {
+    transform-origin: 50% 50%;
+    animation: unrotateBtn 1s ease 1 normal;
+    -webkit-animation: unrotateBtn 1s ease 1 normal;
+}
+
+@-webkit-keyframes rotateBtn {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes unrotateBtn {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#menu-icon {
+    height: auto;
+    width: auto;
+    position: absolute;
+    left: -130px;
+    top: 0;
+    margin: 10px;
+    cursor: pointer;
+    z-index: 999;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: bold;
+    /*border: 1px solid #fff;*/
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: $black;
+    padding-bottom: 7px;
+    padding-right: 12px;
+}
+
+#menu-icon span {
+    line-height: 30px;
+    position: relative;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+@media(max-width:800px) {
+    #menu-icon {
+        width: 24px;
+        height: 24px;
+        border: none;
+        left: -60px;
+    }
+
+    #menu-icon span {
+        display: none;
+    }
+}
+
+.visible {
+    right: 0px;
+    animation: showMenu 1s ease-in normal;
+}
+
+.hidden {
+    right: -250px;
+    animation: hideMenu 1s ease-out normal;
+}
+
+@keyframes showMenu {
+
+    0% {
+        right: -250px;
+    box-shadow: 0 2px 2px 2px $black2;
+    }
+
+    10% {
+        right: 0;
+    box-shadow: none;
+    }
+}
+
+@-webkit-keyframes showMenu {
+
+    0% {
+        right: -250px;
+    box-shadow: 0 2px 2px 2px $black2;
+    }
+
+    10% {
+        right: 0;
+    box-shadow: none;
+    }
+}
+
+@keyframes hideMenu {
+
+
+    0% {
+        right: 0;
+    box-shadow: none;
+    }
+
+    10% {
+        right: -250px;
+    box-shadow: 0 2px 2px 2px $black2;
+    }
+}
+
+@-webkit-keyframes hideMenu {
+
+
+    0% {
+        right: 0%;
+    box-shadow: none;
+    }
+
+    10% {
+        right: -250px;
+    box-shadow: 0 2px 2px 2px $black2;
+    }
+}
+/*#endregion*/
+
+/*#region Archive Sermon Styling*/
+.sermons-grid-wrap {
+    padding: 20px;
+    text-align: center;
+    background-color: $white;
+
+    .sermons-grid {
+        margin: 0 auto;
+        width: 100%;
+
+        .sermon-grid-comp {
+            width: 23%;
+            display: inline-block;
+            padding: 0;
+            cursor: pointer;
+            min-width: 250px;
+            margin: 10px;
+            position: relative;
+            box-shadow: 0 0 10px 0 transparentize($black, 0.5);
+
+            &:hover {
+                box-shadow: 0 0 10px 0 transparentize($black, 0);
+            }
+
+            a {
+                color: $white;
+                text-decoration: none;
+                position: relative;
+            }
+
+            .sermons-art {
+                position: relative;
+                top: 0;
+                margin: 0 auto;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .sermons-art img {
+                width: 100%;
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+
+            .sermons-art .grid-type {
+                position: absolute;
+                background: transparentize($black,0.3);
+                font-size: 16px;
+                line-height: 24px;
+                text-align: left;
+                width: 98%;
+                letter-spacing: 0.5px;
+                padding: 1%;
+                vertical-align: baseline;
+                bottom: 0;
+            }
+
+            .sermons-art .grid-type .name {
+                font-weight: 400;
+                text-transform: uppercase;
+                font-size: $font-size-sm;
+            }
+
+            .sermons-art .grid-type .issermon {
+                font-size: $font-size-sm;
+                margin-right: 10px;
+                white-space: nowrap;
+                display: none;
+            }
+
+            .sermons-art .grid-type .date {
+                font-size: $font-size-xsm;
+                color: $white;
+                font-weight: 400;
+                white-space: nowrap;
+                display: block;
+            }
+
+            &:hover .grid-type-wrap .grid-type {
+                display: block;
+                background-color: $black;
+            }
+        }
+    }
+}
+
+.listen-wrapper {
+    text-align: center;
+}
+
+.listen-button {
+    border-radius: 50% 50%;
+    font-size: 4em;
+    font-weight: bolder;
+    line-height: 1;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0.4;
+    background-color: $black;
+    color: $white;
+
+    &:hover {
+        background-color: $white;
+        color: $black;
+        opacity: 1;
+    }
+}
+
+
+@media(max-width:480px) {
+    .sermons-grid-wrap .sermons-grid .sermon-grid-comp {
+        width: 90%;
+    }
+}
+
+@media(min-width:480px) {
+    .sermons-grid-wrap .sermons-grid .sermon-grid-comp {
+        width: 90%;
+    }
+    .upper-footer{
+        padding:10px 5px;
+        padding-top:$footer-padding-top/2;
+    }
+}
+
+@media(min-width:600px) {
+    .sermons-grid-wrap .sermons-grid .sermon-grid-comp {
+        width: 45%;
+    }
+}
+
+@media(min-width:900px) {
+    .sermons-grid-wrap .sermons-grid .sermon-grid-comp {
+        width: 30%;
+    }
+}
+
+@media(min-width:1200px) {
+    .sermons-grid-wrap .sermons-grid .sermon-grid-comp {
+        width: 23%;
+    }
+}
+
+/*#endregion*/
+
+/*#region Hyperlink*/
+@mixin hyperlink() {
+    cursor: pointer;
+    padding: $base-vertical-margin $base-horizontal-margin;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $white;
+}
+/*#endregion*/
+/*#region Buttons */
+@mixin btn() {
+    cursor: pointer;
+    white-space: nowrap;
+    margin: $base-vertical-margin $base-horizontal-margin;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+@mixin lg-btn() {
+    white-space: nowrap;
+    min-width: $lg-btn-min-width;
+    width: $lg-btn-width;
+    padding: $base-vertical-padding $base-horizontal-padding;
+    text-align: center;
+
+    a {
+        @include hyperlink();
+    }
+
+    &:hover {
+        a {
+            color: $black;
+        }
+    }
+
+    @include btn();
+}
+
+.lg-btn {
+    @include lg-btn();
+}
+
+.lg-btn-lt {
+    border: 3px solid $white;
+    color: $black;
+    background-color: $white;
+
+    a {
+        color: $black;
+    }
+
+    &:hover {
+        border: 3px solid $black;
+        background-color: $black;
+        color: $white;
+
+        a {
+            color: $white;
+        }
+    }
+}
+
+.lg-btn-trans {
+    border: 3px solid $white;
+    color: $white;
+
+    a {
+        color: $white;
+    }
+
+    &:hover {
+        background-color: $white;
+        color: $black;
+        border: 3px solid $white;
+
+        a {
+            color: $black;
+        }
+    }
+}
+
+.lg-btn-dk {
+    border: 3px solid $black;
+    color: $white;
+    background-color: $black;
+
+    &:hover {
+        color: $black;
+        border: 3px solid $white;
+        background-color: $white;
+    }
+}
+/*#endregion */
+/*#region Side Headings */
+.side-head {
+    color: $black;
+    font-weight: 200;
+    margin: 0 auto;
+    width: 97%;
+    text-align: left;
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1em;
+}
+/*#endregion */
+/*#region Background Image Styles */
+.big-banner-content {
+    display: block;
+    width: 90%;
+    margin: 40px auto;
+    position: relative;
+}
+
+.mobile-image {
+    height: $banner-margin-top;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 100%;
+}
+
+
+/* Media quires for a responsive layout */
+
+$banner-480-factor: 0.8;
+/* For smartphones */
+@media (max-width: 480px) {
+    .mobile-image {
+        height: $banner-margin-top*$banner-480-factor !important;
+        background-size: contain;
+    }
+
+    .lg-text {
+        font-size: $banner-font-size-md * $banner-480-factor;
+    }
+
+    .md-text {
+        font-size: $banner-font-size-sm;
+    }
+
+    .banner_wrap {
+        height: $banner-margin-top*$banner-480-factor;
+    }
+
+    .banner_wrap .bg {
+        height: $banner-margin-top*$banner-480-factor;
+    }
+
+    .banner-margin {
+        margin-top: $banner-margin-top*$banner-480-factor !important;
+    }
+}
+
+
+$banner-767-factor: 0.8;
+/* For tablets & smart phones */
+@media (max-width:767px) {
+    .mobile-image {
+        height: $banner-margin-top*$banner-767-factor !important;
+        background-size: contain;
+    }
+
+    .lg-text {
+        font-size: $banner-font-size-md * $banner-767-factor;
+    }
+
+    .md-text {
+        font-size: $banner-font-size-sm;
+    }
+
+    .banner_wrap {
+        height: $banner-margin-top*$banner-767-factor;
+    }
+
+    .banner_wrap .bg {
+        height: $banner-margin-top*$banner-767-factor;
+    }
+
+    .banner-margin {
+        margin-top: $banner-margin-top*$banner-767-factor !important;
+    }
+}
+
+/* For larger displays */
+@media (max-width: 1200px) {
+    .lg-text {
+        font-size: $font-size-lg * $banner-767-factor;
+    }
+
+    .md-text {
+        font-size: $banner-font-size-md * $banner-767-factor;
+    }
+}
+/*End of container css classes*/
+
+.back-left {
+    background-position: left;
+}
+
+.back-center {
+    background-position: center;
+}
+
+.back-right {
+    background-position: right;
+}
+
+.back-top {
+    background-position: center top;
+}
+
+.series-wrap .mobile-image {
+    width: 104%;
+    margin: 20px 0;
+    margin-left: -2%;
+}
+
+.sermon-banner .imgSermon {
+    height: 400px;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    position: fixed;
+}
+
+.banner-margin {
+    margin-top: $banner-margin-top;
+}
+/*#endregion */
+.table-container {
+    width: 100%;
+    overflow: scroll;
+    max-height: 300px;
+}
+
+td {
+    div {
+        max-width: 150px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+.table-condensed > tbody > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > thead > tr > th {
+    padding: 0;
+}
+
+.progress-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.6);
+}
+
+.progress-wrap > div {
+    width: 100%;
+    height: 100%;
+}
+/*#region Material Icons*/
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+// Rules for using icons as black on a light background.
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+// Rules for using icons as white on a dark background.
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+/*#endregion*/

@@ -2,13 +2,13 @@
 
 (function () {
     angular.module('vc3app')
-    .controller('HomeController', function ($scope, $q, HomeService, progress) {
+    .controller('HomeController', function ($scope, $q, $routeParams, $route, $location, HomeService, progress) {
         $scope.bg = {};
-        //progress.inc();
-        //$q.all([HomeService.GetSlides()]).then(function (response) {
-        //    //$scope.bg = response[0];
-        //    progress.dec();
-        //})
+        if ($routeParams.url) {
+            $route.current.$$route.templateUrl = '/partials/' + $routeParams.url + '.html';
+            //$route.path('/partials/' + $routeParams.url + '.html');
+        }
+        console.log($route);
         $scope.bg.image = 'Images/bgs/Web_1.jpg';
     })
 })(angular)

@@ -162,14 +162,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,13 +174,28 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\fonts.css" />
+    <Content Include="css\main.css" />
+    <Content Include="gulpfile.js" />
+    <Content Include="partials\About\our-leaders.html" />
     <Content Include="partials\Archive\Archive.html" />
     <Content Include="partials\Archive\ArchiveController.js" />
     <Content Include="partials\Archive\ArchiveService.js" />
+    <Content Include="partials\Common\contentPageDirTemplate.html" />
+    <Content Include="partials\Common\error.html" />
+    <Content Include="partials\Common\get-baptized.html" />
+    <Content Include="partials\Common\i-have-a-question.html" />
+    <Content Include="partials\Common\share-your-story.html" />
+    <Content Include="partials\Common\need-prayer.html" />
+    <Content Include="partials\Common\accepting-jesus.html" />
+    <Content Include="partials\Common\get-involved.html" />
+    <Content Include="partials\Common\MappedTemplate.html" />
+    <Content Include="partials\Common\MapperController.js" />
     <Content Include="partials\Contact\ContactController.js" />
     <Content Include="partials\Home\Home.html" />
     <Content Include="partials\Home\HomeController.js" />
     <Content Include="partials\Home\HomeService.js" />
+    <Content Include="partials\Common\learn-more.html" />
     <Content Include="partials\Sermons\series.html" />
     <Content Include="partials\Sermons\SeriesController.js" />
     <Content Include="partials\Sermons\SeriesService.js" />
@@ -213,23 +222,11 @@
     <Content Include="Scripts\core\bootstrap.min.js" />
     <Content Include="Scripts\core\firebase.js" />
     <Content Include="Scripts\core\jquery.min.js" />
-    <Content Include="Views\Admin\Admin.html" />
-    <Content Include="Views\Admin\AdminController.js" />
-    <Content Include="Views\Admin\AdminService.js" />
-    <Content Include="Views\Archive\Archive.html" />
-    <Content Include="Views\Archive\ArchiveController.js" />
-    <Content Include="Views\Archive\ArchiveService.js" />
     <Content Include="partials\Contact\AcceptingJesus.html" />
     <Content Include="partials\Contact\Contact.html" />
     <Content Include="Views\Home\Home.html" />
     <Content Include="Views\Home\HomeController.js" />
     <Content Include="Views\Home\HomeService.js" />
-    <Content Include="Views\Sermons\series.html" />
-    <Content Include="Views\Sermons\SeriesController.js" />
-    <Content Include="Views\Sermons\SeriesService.js" />
-    <Content Include="Views\Sermons\sermon.html" />
-    <Content Include="Views\Sermons\SermonController.js" />
-    <Content Include="Views\Sermons\SermonService.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -239,31 +236,10 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -273,6 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="css\main.scss" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
