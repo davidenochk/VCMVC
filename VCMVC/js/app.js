@@ -16,50 +16,55 @@
             .iconSet('navigation', '../../icons/navigation.svg', 24)
         })
         .config(function ($routeProvider, $locationProvider) {
+            var version = '1';
             $routeProvider.when("/", {
-                templateUrl: "partials/Home/home.html",
+                templateUrl: 'partials/Home/home.html?v=' + version,
                 controller: "HomeController"
             })
             .when("/sermon/:id", {
-                templateUrl: "partials/Sermons/sermon.html",
+                templateUrl: 'partials/Sermons/sermon.html?v=' + version,
                 controller: "SermonController"
             })
             .when('/home', {
-                templateUrl: 'partials/Home/home.html',
+                templateUrl: 'partials/Home/home.html?v=' + version,
                 controller: 'HomeController'
             })
             .when("/series/:id", {
-                templateUrl: "partials/Sermons/series.html",
+                templateUrl: 'partials/Sermons/series.html?v=' + version,
                 controller: "SeriesController"
             })
             .when('/archive', {
-                templateUrl: 'partials/Archive/Archive.html',
+                templateUrl: 'partials/Archive/Archive.html?v=' + version,
                 controller: "ArchiveController"
             })
             .when('/about', {
-                templateUrl: 'partials/About/About.html',
+                templateUrl: 'partials/About/About.html?v=' + version,
                 controller: "AboutController"
             })
+            .when('/admin', {
+                templateUrl: 'partials/Admin/Admin.html?v=' + version,
+                controller: "AdminController"
+            })
             .when('/ministry', {
-                templateUrl: 'partials/About/Ministry.html',
+                templateUrl: 'partials/About/Ministry.html?v=' + version,
                 controller: "MinistryController"
             })
             .when('/contact', {
-                templateUrl: 'partials/Contact/Contact.html',
+                templateUrl: 'partials/Contact/Contact.html?v=' + version,
                 controller: "ContactController"
             })
             .when('/contact/accepting-jesus', {
-                templateUrl: 'partials/Contact/AcceptingJesus.html',
+                templateUrl: 'partials/Contact/AcceptingJesus.html?v=' + version,
                 controller: 'ContactController'
             })
             .when('/error/:msg', {
-                templateUrl: 'partials/Common/error.html',
+                templateUrl: 'partials/Common/error.html?v=' + version,
                 controller: function ($scope, $routeParams) {
                     $scope.msg = $routeParams.msg;
                 }
             })
             .when('/:url', {
-                templateUrl: 'partials/Common/mappedTemplate.html',
+                templateUrl: 'partials/Common/mappedTemplate.html?v=' + version,
                 controller: 'MapperController'
             })
             .otherwise({
@@ -70,7 +75,7 @@
         .directive('contentPageTemplate', function () {
             return {
                 restrict: 'E',
-                templateUrl: 'partials/Common/contentPageDirTemplate.html',
+                templateUrl: 'partials/Common/contentPageDirTemplate.html?v=' + version,
                 controller: function ($scope, data) {
                     var pages = data.pages;
                     $scope.page = pages[$scope.pagename];
@@ -78,6 +83,11 @@
                 scope: {
                     pagename: '@'
                 }
+            }
+        })
+        .service('popups', function PopupService($mdDialog) {
+            this.ShowDialog = function () {
+                $mdDialog.show();
             }
         })
         .directive('socialLinks', function () {
@@ -213,6 +223,16 @@
             })
             return deferred.promise;
         }
+        this.push = function push(objName, obj) {
+            var firebase;
+            firebase = new Firebase(config['fire_' + objName + 'URL']);
+            firebase.push(obj);
+        }
+        this.remove = function push(objName, id) {
+            var firebase;
+            firebase = new Firebase(config['fire_' + objName + 'URL'] + '/' + id);
+            firebase.remove();
+        }
         this.Edit = function (name, newsermon, id) {
             var deferred = $q.defer();
             var srs = new Firebase(config.fire_SermonsURL + "/" + id);
@@ -273,6 +293,7 @@
         var fire_app_name = "demovc3";
         //this.sermonURL = 'http://' + $window.location.host + '/Presentation/Sermons/sermon.aspx?id=';
         //this.seriesURL = 'http://' + $window.location.host + '/Presentation/Series/series.aspx?id=';
+        this.version = '1';
         this.sermonURL = '/sermon/';
         this.seriesURL = '/series/';
         this.fire_SermonsURL = "https://" + fire_app_name + ".firebaseio.com/sermons";

@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "name": "ASP.NET",
+  "private": true,
+  "devDependencies": {
+    "bower": "^1.6.5",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.0"
+  },
+  "dependencies": {
+    "firebase": "^2.3.1"
+  }
+}

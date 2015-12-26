@@ -1,7 +1,7 @@
 ﻿"use strict";
 (function () {
     var app = angular.module('vc3app');
-    app.controller('ArchiveController', ['$scope', '$q', '$window', 'ArchiveService', 'progress', 'config', function ($scope, $q, $window, srv_archive, progress, config) {
+    app.controller('ArchiveController', ['$scope', '$q', 'ArchiveService', 'progress', 'config', function ($scope, $q, srv_archive, progress, config) {
         progress.inc();
         $q.all([srv_archive.GetArchive()]).then(function (response) {
             response = response[0];
