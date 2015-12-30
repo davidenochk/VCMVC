@@ -1,21 +1,23 @@
-﻿<span data-ng-click="new = true">Add New {{objectName}}</span>
-<table>
+﻿<table>
     <thead>
         <tr><td>Edit</td><td>Delete</td><td data-ng-repeat="key in GetKeys(defaultObject)"><label>{{key}}</label></td></tr>
     </thead>
     <tr data-ng-show="new">
-        <td colspan="2"><span>New</span></td>
+        <td colspan="2"><span>New</span><span data-ng-show="new" data-ng-click="Push()">Add</span></td>
         <td data-ng-repeat="key in GetKeys(newObj)"><input type="text" data-ng-model="newObj[key]" value="{{newObj[key]}}" /></td>
     </tr>
-    <tr data-ng-repeat="obj in objects">
-        <td><span data-ng-click="Edit(obj.ID)">Edit</span></td>
-        <td><span data-ng-click="Delete(obj.ID)">Delete</span></td>
+    <tr data-ng-repeat="obj in Obj">
+        <td>
+            <span data-ng-show="edit" data-ng-click="Save(obj.$id)">Save</span><span data-ng-show="!edit" data-ng-click="edit = !edit">Edit</span><span data-ng-show="edit" data-ng-click="edit = !edit">Cancel</span>
+        </td>
+        <td><span data-ng-click="Delete(obj.$id)">Delete</span></td>
         <td data-ng-repeat="key in GetKeys(defaultObject)">
             <div data-ng-show="!edit">{{obj[key]}}</div>
-            <div data-ng-show="edit"><label>{{key}}</label><input data-ng-model="obj[key]" type="text" value="{{obj[key]}}" /></div>
+            <div data-ng-show="edit"><input data-ng-model="obj[key]" type="text" value="{{obj[key]}}" /></div>
         </td>
     </tr>
 </table>
-<span data-ng-click="Save()">Update Series</span>
-<span data-ng-click="Add()">Add Series</span>
+<span data-ng-click="Add()">Add {{objectName}}</span>
 <span data-ng-click="Cancel()">Cancel</span>
+<br/>
+<br/>

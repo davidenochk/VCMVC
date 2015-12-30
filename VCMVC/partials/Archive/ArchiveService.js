@@ -5,6 +5,7 @@
 var app = angular.module('vc3app');
 app.service('ArchiveService', function (data, $q) {
     var thiss = this;
+    data.SetTitle('Sermon Archive');
     this.GetArchive = function () {
         var q = $q.defer();
         //Wait for the sermons, series & speakers to load

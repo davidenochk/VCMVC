@@ -3,7 +3,6 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
-    <link href="../css/audioplayer.css" rel="stylesheet" />
     <script src="../js/audioplayer.min.js"></script>
     <script type="text/javascript">
         $('#listen-button').click(function () {
@@ -14,7 +13,7 @@
 <body>
     <div id="content-wrap" data-ng-controller="SermonController" data-ng-cloak="">
         <div class="banner_wrap">
-            <div class="bg mobile-image back-center" data-ng-style="{'background-image': 'url(' + GetArt(sermon) + ')'}">
+            <div class="bg mobile-image back-center" data-ng-style="{'background-image': 'url(' + GetArt() + ')'}">
                 <div class="slider_content">
                 </div>
             </div>
@@ -23,12 +22,15 @@
         <div data-layout="row" data-layout-align="center center" class="listen-wrapper" style="display:none;" id="divListen">
             
         </div>
+        <br/>
         <div class="main_content">
             <div class="lg-text">Sermon : {{sermon.Name}}</div>
             <div layout="row" layout-padding="" layout-align="center center"><div class="md-text">{{GetSpeakerName(sermon.By)}}</div><div class="md-text">({{sermon.On | dateCustom}})</div></div>
+            <br />
             <div class="content" data-ng-bind-html="sermonDescription">
             </div>
-            <div data-layout="row" data-layout-sm="column" data-layout-align="center center">
+            <br />
+            <div data-ng-show="sermon.Audio" data-layout="row" data-layout-sm="column" data-layout-align="center center">
                 <div id="listen-button" class="lg-btn lg-btn-dk" data-ng-click="PlayAudio()">Listen</div>
                 <div class="lg-btn lg-btn-lt" data-ng-click="DownloadSermon()">Download</div>
             </div>

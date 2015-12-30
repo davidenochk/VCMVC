@@ -10,7 +10,8 @@ Array.prototype.find = function (c, v) {
 Array.prototype.findAll = function (c, v) {
     var r = [];
     for (var i = 0; i < this.length; i++) {
-        if (this[i][c] === v) {
+        if (this[i][c] && v && this[i][c].toString() === v.toString())
+        {
             r.push(this[i]);
         }
     }

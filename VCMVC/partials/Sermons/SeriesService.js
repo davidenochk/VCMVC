@@ -11,6 +11,7 @@
             $q.all([data.GetSermons(), data.GetSeries()]).then(function (response) {
                 //Send Series & it's sermon details
                 //If there is no series with this id, then get the latest series
+                console.log(response);
                 var serie = response[1].find('ID', id).ID ? response[1].find('ID', id) : response[1][response[1].length - 1];
                 var sermons = response[0].findAll('SeriesID', id);
                 q.resolve({ series: serie, sermons: sermons });

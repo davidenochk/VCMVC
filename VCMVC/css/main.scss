@@ -1,7 +1,7 @@
 ﻿/*#region variables */
 $base-font-size: 1em;
-$banner-max-height: 350px;
-$banner-min-height: 300px;
+$banner-max-height: 450px;
+$banner-min-height: 400px;
 $content-min-height: 400px;
 $banner-font-size-lg: $base-font-size*4;
 $banner-font-size-md: $base-font-size*2;
@@ -10,15 +10,15 @@ $font-size-lg: $base-font-size*3;
 $font-size-md: $base-font-size*2;
 $font-size-sm: $base-font-size*1;
 $font-size-xsm: $base-font-size*0.8;
-$base-vertical-padding: 8px;
-$base-horizontal-padding: 10px;
+$base-vertical-padding: 15px;
+$base-horizontal-padding: 20px;
 $base-vertical-margin: 10px;
 $base-horizontal-margin: 20px;
 $base-padding: 10px;
 $lg-btn-width: auto;
 $lg-btn-min-width: 200px;
-$banner-margin-top: 300px;
-$footer-padding-top:150px;
+$banner-margin-top: 400px;
+$footer-padding-top: 150px;
 $white: #fff;
 $white2: #ddd;
 $black: #262626;
@@ -31,8 +31,8 @@ $black2: #444;
 
 ul {
     list-style: none;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 
     li a {
         text-decoration: none;
@@ -41,7 +41,7 @@ ul {
 
 h1, h2, h3, h4, h5, h6 {
     padding: 0;
-    text-align:left;
+    text-align: left;
     margin: 0;
 }
 
@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #top-bar {
-    z-index: 0;
+    z-index: 1;
     position: fixed;
     top: 10px;
     left: 10px;
@@ -175,26 +175,27 @@ h1, h2, h3, h4, h5, h6 {
     color: $white;
     padding: 20px 10%;
     width: 70%;
-    margin:0 auto;
-    padding-top:$footer-padding-top;
+    margin: 0 auto;
+    padding-top: $footer-padding-top;
 
-    h3{
-        margin-bottom:10px;
-        text-transform:uppercase;
+    h3 {
+        margin-bottom: 10px;
+        text-transform: uppercase;
     }
 
     a {
         color: darken($white,30);
-        font-size:$font-size-xsm * 1.2;
-        font-weight:400;
-    }
-    .logo{
-        width:100px;
+        font-size: $font-size-xsm * 1.2;
+        font-weight: 400;
     }
 
-    .social{
-        margin-top:20px;
-        width:70%;
+    .logo {
+        width: 100px;
+    }
+
+    .social {
+        margin-top: 20px;
+        width: 70%;
     }
 }
 
@@ -248,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     left: 0px;
     font-size: 24px;
-    color:$white;
+    color: $white;
 }
 
 #side-menu ul li a {
@@ -262,8 +263,8 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     border-bottom: 1px solid $black;
     font-weight: bold;
-    padding-left:40px;
-    letter-spacing:0.5px;
+    padding-left: 40px;
+    letter-spacing: 0.5px;
 }
 
 #side-menu ul li a:hover {
@@ -280,8 +281,8 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 14px;
     vertical-align: middle;
     font-weight: normal;
-    background-image:url(../Images/close_side_menu.png);
-    background-repeat:no-repeat;
+    background-image: url(../Images/close_side_menu.png);
+    background-repeat: no-repeat;
 }
 
 .rotate {
@@ -370,12 +371,12 @@ h1, h2, h3, h4, h5, h6 {
 
     0% {
         right: -250px;
-    box-shadow: 0 2px 2px 2px $black2;
+        box-shadow: 0 2px 2px 2px $black2;
     }
 
     10% {
         right: 0;
-    box-shadow: none;
+        box-shadow: none;
     }
 }
 
@@ -383,12 +384,12 @@ h1, h2, h3, h4, h5, h6 {
 
     0% {
         right: -250px;
-    box-shadow: 0 2px 2px 2px $black2;
+        box-shadow: 0 2px 2px 2px $black2;
     }
 
     10% {
         right: 0;
-    box-shadow: none;
+        box-shadow: none;
     }
 }
 
@@ -397,12 +398,12 @@ h1, h2, h3, h4, h5, h6 {
 
     0% {
         right: 0;
-    box-shadow: none;
+        box-shadow: none;
     }
 
     10% {
         right: -250px;
-    box-shadow: 0 2px 2px 2px $black2;
+        box-shadow: 0 2px 2px 2px $black2;
     }
 }
 
@@ -411,12 +412,12 @@ h1, h2, h3, h4, h5, h6 {
 
     0% {
         right: 0%;
-    box-shadow: none;
+        box-shadow: none;
     }
 
     10% {
         right: -250px;
-    box-shadow: 0 2px 2px 2px $black2;
+        box-shadow: 0 2px 2px 2px $black2;
     }
 }
 /*#endregion*/
@@ -541,9 +542,10 @@ h1, h2, h3, h4, h5, h6 {
     .sermons-grid-wrap .sermons-grid .sermon-grid-comp {
         width: 90%;
     }
-    .upper-footer{
-        padding:10px 5px;
-        padding-top:$footer-padding-top/2;
+
+    .upper-footer {
+        padding: 10px 5px;
+        padding-top: $footer-padding-top/2;
     }
 }
 
@@ -688,7 +690,6 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center;
     background-size: cover;
     margin: 0 auto;
-    max-width: 1600px;
     width: 100%;
 }
 
@@ -725,7 +726,7 @@ $banner-480-factor: 0.8;
 }
 
 
-$banner-767-factor: 0.8;
+$banner-767-factor: 1;
 /* For tablets & smart phones */
 @media (max-width:767px) {
     .mobile-image {
@@ -798,6 +799,33 @@ $banner-767-factor: 0.8;
 
 .banner-margin {
     margin-top: $banner-margin-top;
+}
+
+.reference {
+    font-size: 0.8em;
+    color: #fff;
+    text-align: left;
+    position: relative;
+    left: 50px;
+    margin: 5px;
+    margin-bottom:20px;
+}
+.scripture::before{
+    content:'•';
+    font-size:2em;
+    color:#888888;
+    line-height:1;
+    vertical-align:middle;
+    padding-left:5px;
+}
+
+.reference a {
+    color: #555555;
+    border: 1px solid #AAA;
+    padding: 5px 10px;
+    margin: 10px 10px 5px 10px;
+    text-decoration:none;
+    display:inline-block;
 }
 /*#endregion */
 .table-container {

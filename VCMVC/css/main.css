@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*#region variables */
 /*#endregion */
 /*#region Banner(On every content page, add sliding content) */
@@ -17,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0; }
 
 .banner_wrap {
-  height: 300px;
+  height: 400px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -27,12 +28,12 @@ h1, h2, h3, h4, h5, h6 {
   .banner_wrap .bg {
     background-position: center 50%;
     background-size: cover;
-    height: 300px;
+    height: 400px;
     vertical-align: middle; }
     .banner_wrap .bg .slider_content {
       min-width: 300px;
-      max-height: 350px;
-      min-height: 300px;
+      max-height: 450px;
+      min-height: 400px;
       margin: auto;
       padding: 30px;
       vertical-align: middle;
@@ -97,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
       margin-right: 10px; }
 
 #top-bar {
-  z-index: 0;
+  z-index: 1;
   position: fixed;
   top: 10px;
   left: 10px;
@@ -424,7 +425,7 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
   min-width: 200px;
   width: auto;
-  padding: 8px 10px;
+  padding: 15px 20px;
   text-align: center;
   cursor: pointer;
   white-space: nowrap;
@@ -497,53 +498,52 @@ h1, h2, h3, h4, h5, h6 {
   position: relative; }
 
 .mobile-image {
-  height: 300px;
+  height: 400px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin: 0 auto;
-  max-width: 1600px;
   width: 100%; }
 
 /* Media quires for a responsive layout */
 /* For smartphones */
 @media (max-width: 480px) {
   .mobile-image {
-    height: 240px !important;
+    height: 320px !important;
     background-size: contain; }
   .lg-text {
     font-size: 1.6em; }
   .md-text {
     font-size: 1em; }
   .banner_wrap {
-    height: 240px; }
+    height: 320px; }
   .banner_wrap .bg {
-    height: 240px; }
+    height: 320px; }
   .banner-margin {
-    margin-top: 240px !important; } }
+    margin-top: 320px !important; } }
 
 /* For tablets & smart phones */
 @media (max-width: 767px) {
   .mobile-image {
-    height: 240px !important;
+    height: 400px !important;
     background-size: contain; }
   .lg-text {
-    font-size: 1.6em; }
+    font-size: 2em; }
   .md-text {
     font-size: 1em; }
   .banner_wrap {
-    height: 240px; }
+    height: 400px; }
   .banner_wrap .bg {
-    height: 240px; }
+    height: 400px; }
   .banner-margin {
-    margin-top: 240px !important; } }
+    margin-top: 400px !important; } }
 
 /* For larger displays */
 @media (max-width: 1200px) {
   .lg-text {
-    font-size: 2.4em; }
+    font-size: 3em; }
   .md-text {
-    font-size: 1.6em; } }
+    font-size: 2em; } }
 
 /*End of container css classes*/
 .back-left {
@@ -571,7 +571,32 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed; }
 
 .banner-margin {
-  margin-top: 300px; }
+  margin-top: 400px; }
+
+.reference {
+  font-size: 0.8em;
+  color: #fff;
+  text-align: left;
+  position: relative;
+  left: 50px;
+  margin: 5px;
+  margin-bottom: 20px; }
+
+.scripture::before {
+  content: '•';
+  font-size: 2em;
+  color: #888888;
+  line-height: 1;
+  vertical-align: middle;
+  padding-left: 5px; }
+
+.reference a {
+  color: #555555;
+  border: 1px solid #AAA;
+  padding: 5px 10px;
+  margin: 10px 10px 5px 10px;
+  text-decoration: none;
+  display: inline-block; }
 
 /*#endregion */
 .table-container {

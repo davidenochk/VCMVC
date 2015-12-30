@@ -176,7 +176,10 @@
     <Content Include="css\core\bootstrap.min.css" />
     <Content Include="css\core\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="css\fonts.css" />
+    <Content Include="css\fonts\BebasNeue-webfont.svg" />
+    <Content Include="css\fonts\Dharma Type Font License.txt" />
     <Content Include="css\main.css" />
+    <Content Include="css\style.css" />
     <Content Include="gulpfile.js" />
     <Content Include="icons\action.svg" />
     <Content Include="icons\communication.svg" />
@@ -198,7 +201,10 @@
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\instagram.png" />
+    <Content Include="Images\bgs\POJWide.jpg" />
+    <Content Include="Images\pattern.png" />
     <Content Include="Images\twitter.png" />
+    <Content Include="js\modernizr.custom.86080.js" />
     <Content Include="lib\angular-animate\angular-animate.min.js" />
     <Content Include="lib\angular-aria\angular-aria.min.js" />
     <Content Include="lib\angular-material\angular-material.min.css" />
@@ -212,7 +218,14 @@
     <Content Include="lib\bootstrap\dist\js\bootstrap.min.js" />
     <Content Include="lib\firebase\firebase.js" />
     <Content Include="lib\jquery\dist\jquery.min.js" />
-    <Content Include="partials\About\our-leaders.html" />
+    <Content Include="partials\About\about.html" />
+    <Content Include="partials\About\AboutController.js" />
+    <Content Include="partials\About\beliefs.html" />
+    <Content Include="partials\About\missions.html" />
+    <Content Include="partials\About\leaders.html" />
+    <Content Include="partials\About\movement.html" />
+    <Content Include="partials\About\vision.html" />
+    <Content Include="partials\About\worship.html" />
     <Content Include="partials\Admin\Admin.html" />
     <Content Include="partials\Admin\AdminService.js" />
     <Content Include="partials\Admin\AdminController.js" />
@@ -222,7 +235,7 @@
     <Content Include="partials\Common\contentPageDirTemplate.html" />
     <Content Include="partials\Common\error.html" />
     <Content Include="partials\Common\get-baptized.html" />
-    <Content Include="partials\Common\i-have-a-question.html" />
+    <Content Include="partials\Common\secondLinks.html" />
     <Content Include="partials\Common\share-your-story.html" />
     <Content Include="partials\Common\need-prayer.html" />
     <Content Include="partials\Common\accepting-jesus.html" />
@@ -234,6 +247,11 @@
     <Content Include="partials\Home\HomeController.js" />
     <Content Include="partials\Home\HomeService.js" />
     <Content Include="partials\Common\learn-more.html" />
+    <Content Include="partials\Ministries\connect-groups.html" />
+    <Content Include="partials\Ministries\influence.html" />
+    <Content Include="partials\Ministries\kids-church.html" />
+    <Content Include="partials\Ministries\ministries.html" />
+    <Content Include="partials\Ministries\sunday-service.html" />
     <Content Include="partials\Sermons\series.html" />
     <Content Include="partials\Sermons\SeriesController.js" />
     <Content Include="partials\Sermons\SeriesService.js" />
@@ -282,6 +300,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\sermon-images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -290,11 +309,14 @@
     <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="css\2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2" />
     <Content Include="css\core\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="css\core\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="css\core\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="css\core\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="css\fonts\2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2" />
+    <Content Include="css\fonts\BebasNeue-webfont.eot" />
+    <Content Include="css\fonts\BebasNeue-webfont.ttf" />
+    <Content Include="css\fonts\BebasNeue-webfont.woff" />
     <None Include="Project_Readme.html" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
   </ItemGroup>

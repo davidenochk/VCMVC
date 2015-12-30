@@ -1,12 +1,12 @@
-﻿<html data-ng-app="vc3app">
+﻿<html data-ng-app="vc3app" data-ng-controller="MainCtrl" data-ng-cloak="">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/" />
-    <title>C3 Victory Secunderabad - GROW • BUILD • INFLUENCE</title>
+    <title>{{title.title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shorcut icon" type="image/x-icon" href="../Images/favicon.ico" />
-    <meta name="description" content="C3 CHURCH SECUNDERABAD IS ONE OF THE CONTEMPORARY CHURCHES IN HYDERABAD AND SECUNDERABAD WITH BURDEN FOR URBAN YOUTH, PASSIONATE TO PRAISE, WORSHIP AND GLORIFY GOD AND EMPOWER THE WEAK WITH THE WORD OF GOD." />
+    <meta name="description" content="{{content}}" />
     <meta name="keywords" content="C3 CHURCH, C3 VICTORY SECUNDERABAD, C3 Church Secunderabad, C3 Victory, C3 India, church near clock tower, VC3 Church, churches in secunderabad, youth church, christian music, christian, christ centered, pentecostal, spirit filled, churches in hyderabad, friends, hang out" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -28,6 +28,7 @@
 
     <script src="~/js/Utils.js"></script>
     <script src="~/js/app.js"></script>
+    <script src="~/js/modernizr.custom.86080.js"></script>
 
     <script src="~/partials/Archive/ArchiveService.js"></script>
     <script src="~/partials/Archive/ArchiveController.js"></script>
@@ -110,7 +111,7 @@
         })
     </script>
 </head>
-<body data-ng-controller="MainCtrl" data-ng-cloak="">
+<body>
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none; width: 0; height: 0;">
         <defs>
             <filter id="svgbg" x="0" y="0">
@@ -158,18 +159,17 @@
                     <ul id="quickLinks">
                         <li><a href="/archive">Sermon Archive</a></li>
                         <li><a href="/learn-more">Learn More</a></li>
-                        <li><a href="/get-involved">Get Involved</a></li>
+                        @*<li><a href="/get-involved">Get Involved</a></li>*@
                         <li><a href="/contact">Contact Us</a></li>
                     </ul>
-                    <social-links></social-links>
                 </div>
                 <div data-layout="column" layout-align="start start">
                     <h3>About</h3>
                     <ul id="about">
-                        <li><a href="/our-beliefs">Our Beliefs</a></li>
-                        <li><a href="/our-leaders">Our Leaders</a></li>
-                        <li><a href="/our-movement">Our Movement</a></li>
-                        <li><a href="/kids-church">Kids Church</a></li>
+                        <li><a href="/beliefs">Our Beliefs</a></li>
+                        <li><a href="/leaders">Our Leaders</a></li>
+                        @*<li><a href="/movement">Our Movement</a></li>
+                        <li><a href="/kids">Kids Church</a></li>*@
                         <li><a href="/ministries">Ministries</a></li>
                     </ul>
                 </div>
@@ -177,11 +177,11 @@
                     <h3>Media</h3>
                     <ul id="media">
                         <li><a href="/archive">Sermon Archive</a></li>
-                        <li><a href="/missions">Missions</a></li>
-                        <li><a href="/resources">Church Resources</a></li>
+                        @*<li><a href="/missions">Missions</a></li>
+                        <li><a href="/resources">Church Resources</a></li>*@
                     </ul>
                 </div>
-                <div data-layout="column" layout-align="start start">
+                @*<div data-layout="column" layout-align="start start">
                     <h3>Contact Us</h3>
                     <ul id="contact">
                         <li><a href="/accepting-jesus">Accepting Jesus</a></li>
@@ -190,8 +190,10 @@
                         <li><a href="/get-baptized">Get Baptized</a></li>
                         <li><a href="/i-have-a-question">I Have A Question</a></li>
                     </ul>
-                </div>
+                </div>*@
             </div>
+            <social-links></social-links>
+            <br/>
             <div class='lower-footer'>
                 <span class="xsm-text">C3 Victory Church, Secunderabad. All Rights Reserved. Plot No 90, P&T Colony, Trimulgherry, Hyderabad - 500015, Telangana, India +91 9849189799 <a href="mailto:{{mail_info}}">{{mail_info}}</a></span>
             </div>

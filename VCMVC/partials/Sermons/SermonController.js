@@ -6,7 +6,9 @@
         $scope.sermon = {};
         $scope.sermonID = parseInt($routeParams.id);
         progress.inc();
-        $q.all([SermonService.GetSermon($scope.sermonID), data.GetSeries(), data.GetSpeakers()]).then(function (response) {
+        $q.all([SermonService.GetSermon($scope.sermonID), data.GetSeries(), data.GetSpeakers()]).then(function (response)
+        {
+            console.log(response);
             $scope.sermon = response[0];
             $scope.series = response[1];
             $scope.speakers = response[2];
@@ -15,13 +17,16 @@
         });
         $scope.BindSermonDetails = function () {
             $scope.sermonDescription = $scope.sermon.About;
+            console.log($scope.series.find('ID', $scope.sermon.SeriesID).Name + ' - ' + $scope.sermon.Name);
+            data.SetTitle($scope.sermon.SeriesID === 0 ? $scope.sermon.Name + ' - Sermon' : $scope.series.find('ID', $scope.sermon.SeriesID).Name + ' - ' + $scope.sermon.Name);
         }
         $scope.DownloadSermon = function () {
             var el = document.getElementById('download-link');
-            console.log(el);
             el.click();
         }
-        $scope.GetArt = function (sermon) {
+        $scope.GetArt = function ()
+        {
+            var sermon = $scope.sermon;
             if (sermon && $scope.series)
                 return sermon.Art ? sermon.Art : $scope.series.find('ID', sermon.SeriesID).Art;
         }
