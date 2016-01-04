@@ -109,7 +109,7 @@ var version = 1;
                     $q.all([data.GetPages()]).then(function (response)
                     {
                         console.log(response[0], $scope.name);
-                        $scope.links = response[0].findAll('parent', $scope.name);
+                        $scope.links = response[0].findAll('parent', $scope.name).findAll('isLive', true);
                         console.log($scope.links);
                         progress.dec();
                     }, function ()
@@ -198,7 +198,7 @@ var version = 1;
     })
     app.service('data', function ($firebaseArray, $firebaseObject, $q, config)
     {
-        let thiss = this;
+        var thiss = this;
         this.Title = { title: 'C3 Victory Secunderabad - Love • Grow • Build' };
         this.SetTitle = function SetTitle(title)
         {
@@ -415,7 +415,7 @@ var version = 1;
     });
     app.service('config', function ($window)
     {
-        let _this = this;
+        var _this = this;
         var fire_app_name = "demovc3";
         //this.sermonURL = 'http://' + $window.location.host + '/Presentation/Sermons/sermon.aspx?id=';
         //this.seriesURL = 'http://' + $window.location.host + '/Presentation/Series/series.aspx?id=';

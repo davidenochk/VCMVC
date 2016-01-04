@@ -179,6 +179,7 @@
     <Content Include="css\fonts\BebasNeue-webfont.svg" />
     <Content Include="css\fonts\Dharma Type Font License.txt" />
     <Content Include="css\main.css" />
+    <None Include="css\style.scss" />
     <Content Include="css\style.css" />
     <Content Include="gulpfile.js" />
     <Content Include="icons\action.svg" />
@@ -233,6 +234,7 @@
     <Content Include="partials\Archive\ArchiveController.js" />
     <Content Include="partials\Archive\ArchiveService.js" />
     <Content Include="partials\Common\contentPageDirTemplate.html" />
+    <Content Include="partials\Common\defaultTemplate.html" />
     <Content Include="partials\Common\error.html" />
     <Content Include="partials\Common\get-baptized.html" />
     <Content Include="partials\Common\secondLinks.html" />

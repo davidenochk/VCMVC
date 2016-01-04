@@ -4,7 +4,7 @@
     angular.module('vc3app')
     .service('SermonService', function ($q, data) {
         //Get sermon details
-        let _this = this;
+        var _this = this;
         this.GetSermon = function (id)
         {
             var q = $q.defer();
