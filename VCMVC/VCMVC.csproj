@@ -225,6 +225,7 @@
     <Content Include="partials\About\missions.html" />
     <Content Include="partials\About\leaders.html" />
     <Content Include="partials\About\movement.html" />
+    <Content Include="partials\About\praise.html" />
     <Content Include="partials\About\vision.html" />
     <Content Include="partials\About\worship.html" />
     <Content Include="partials\Admin\Admin.html" />
