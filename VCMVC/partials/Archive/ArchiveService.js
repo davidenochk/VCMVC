@@ -3,7 +3,7 @@
  * @param : Uses dataService to get the sermons & series lists
  */
 var app = angular.module('vc3app');
-app.service('ArchiveService', function (data, $q) {
+app.service('ArchiveService', function (data, $q, $filter) {
     var thiss = this;
     data.SetTitle('Sermon Archive');
     this.GetArchive = function () {
@@ -21,7 +21,8 @@ app.service('ArchiveService', function (data, $q) {
      * @description Returns the list of sermons to be displayed in archive
      * If the sermon is a part of a series, even series goes with the sermon as an object with name SERIES
      */
-    var GetArchiveList = function GetArchiveList() {
+    var GetArchiveList = function GetArchiveList()
+    {
         var sermons = data.sermons;
         //Sort by date
         sermons.sort(comp);
@@ -39,6 +40,7 @@ app.service('ArchiveService', function (data, $q) {
                 result.push(sermons[i]);
             }
         }
+        result = result.sort(comp);
         return result;
     }
 });

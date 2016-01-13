@@ -17,8 +17,10 @@ Array.prototype.findAll = function (c, v) {
     }
     return r;
 };
-function comp(a, b) {
-    return -new Date(a.On).getTime() + new Date(b.On).getTime();
+function comp(a, b)
+{
+    console.log(Date.parse(a.On), Date.parse(b.On), Date.parse(b.On) - Date.parse(a.On));
+    return new Date(Date.parse(b.On)) - new Date(Date.parse(a.On));
 }
 
 function getParameterByName(name) {

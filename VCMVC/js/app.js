@@ -1,5 +1,5 @@
 ﻿"use strict";
-var version = 1;
+var version = Math.random() * 1000000;
 (function ()
 {
     var app = angular.module('vc3app', ['ngMaterial', 'ngSanitize', 'ngRoute', 'firebase', 'Util'])
@@ -8,7 +8,10 @@ var version = 1;
             return function (val)
             {
                 if (val)
-                    return $filter('date')(new Date(val), 'dd MMM, yyyy');
+                {
+                    //console.log(val);
+                    return $filter('date')(Date.parse(val), 'dd MMM, yyyy');
+                }
                 else
                     return '';
             }
@@ -86,9 +89,9 @@ var version = 1;
                 controller: function ($scope, data)
                 {
                     var pages = data.pages;
-                    console.log($scope.pagename);
-                    $scope.page = pages.findAll('Name', $scope.pagename)[0];
-                    console.log($scope.page);
+                    console.log('page name', $scope.pagename);
+                    $scope.page = pages.findAll('Name', $scope.pagename.toString())[0];
+                    console.log('page', $scope.page);
                 },
                 scope: {
                     pagename: '@'
@@ -135,6 +138,25 @@ var version = 1;
                 {
                     $scope.social = data.social();
                 }
+            }
+        })
+        .directive('socialShare', function ()
+        {
+            return {
+                restrict: 'E',
+                template: '<div class="social-share" data-layout="row" data-layout="space-around center"><a target="_blank" ng-click="TwitterShare()">Twitter</a></div>',
+                controller: function ($scope, data)
+                {
+                    $scope.TwitterShare = function TwitterShare()
+                    {
+                        window.open('https://twitter.com/intent/tweet?source=c3victorysecbad&text=' + $scope.sermon.Name + ($scope.sermon.SeriesID ? '+of+' + $scope.series.findAll('ID', $scope.sermon.SeriesID)[0].Name : '') + '+from+%40C3VictorySecbad&url=http://c3victory.in/sermon/' + $scope.sermon.ID + '/');
+                    }
+                    $scope.FacebookShare = function FacebookShare()
+                    {
+                        window.open('');
+                    }
+                }
+
             }
         })
         .controller('MainCtrl', function ($scope, progress, config, data)

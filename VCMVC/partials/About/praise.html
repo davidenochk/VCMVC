@@ -1,4 +1,6 @@
 ﻿<content-page-template pagename="praise"></content-page-template>
-<div class="main_content">
-    {{page.content}}
+<div class="content main_content">
+    <div data-ng-bind-html="page.content"></div>
+    <br />
+    <second-links name="about"></second-links>
 </div>

@@ -9,6 +9,9 @@
             $('#divListen').css('display', 'block');
         });
     </script>
+    <meta property="og:title" content="{{sermon.Name}}" ng-if="sermon.Name" />
+    <meta property="og:description" content="{{sermon.About}}" ng-if="sermon.About" />
+    <meta property="og:image" content="{{sermon.Art}}" ng-if="sermon.Art" />
 </head>
 <body>
     <div id="content-wrap" data-ng-controller="SermonController" data-ng-cloak="">
@@ -36,6 +39,7 @@
             </div>
             <a data-ng-href="{{sermon.Audio}}" id="download-link"></a>
         </div>
+        <social-share></social-share>
     </div>
 </body>
 </html>

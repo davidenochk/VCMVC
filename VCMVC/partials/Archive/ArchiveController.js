@@ -1,13 +1,12 @@
 ﻿"use strict";
 (function () {
     var app = angular.module('vc3app');
-    app.controller('ArchiveController', ['$scope', '$q', 'ArchiveService', 'progress', 'config', function ($scope, $q, srv_archive, progress, config) {
+    app.controller('ArchiveController', ['$scope', '$q', 'ArchiveService', 'progress', 'config', function ($scope, $q, srv_archive, progress, config, $filter) {
         progress.inc();
         $q.all([srv_archive.GetArchive()]).then(function (response) {
             response = response[0];
             $scope.archive = response.archive;
             $scope.sermon = response.archive[0];
-            console.log($scope.archive);
             progress.dec();
             $scope.series = response.series;
         })

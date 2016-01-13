@@ -26,5 +26,10 @@ namespace VCMVC.Controllers
 
             return View();
         }
+
+        public ActionResult Sermon()
+        {
+            return View();
+        }
     }
 }

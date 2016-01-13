@@ -3,14 +3,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/" />
-    <title>{{title.title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shorcut icon" type="image/x-icon" href="../Images/favicon.ico" />
-    <meta name="description" content="{{content}}" />
-    <meta name="keywords" content="C3 CHURCH, C3 VICTORY SECUNDERABAD, C3 Church Secunderabad, C3 Victory, C3 India, church near clock tower, VC3 Church, churches in secunderabad, youth church, christian music, christian, christ centered, pentecostal, spirit filled, churches in hyderabad, friends, hang out" />
+    @RenderSection("META")
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link href="~/css/core/angular-material.min.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
     <link href="~/css/main.css" rel="stylesheet" />
@@ -25,9 +22,10 @@
     <script src="~/Scripts/core/angularfire.min.js"></script>
     <script src="~/Scripts/core/firebase.js"></script>
     <script src="~/Scripts/core/jquery.min.js"></script>
+    <script src="~/js/date.js"></script>
 
     <script src="~/js/Utils.js"></script>
-    <script src="~/js/app.js"></script>
+    <script src="~/js/app.js?version=3"></script>
     <script src="~/js/modernizr.custom.86080.js"></script>
 
     <script src="~/partials/Archive/ArchiveService.js"></script>
@@ -50,12 +48,15 @@
     <script src="~/partials/Common/MapperController.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.second-nav-header li').click(function () {
+        $(document).ready(function ()
+        {
+            $('.second-nav-header li').click(function ()
+            {
                 var $target = $($(this).attr('class'));
                 if ($($target).html() == undefined)
                     $target = $('div.' + $(this).attr('class'));
-                if ($target.length) {
+                if ($target.length)
+                {
                     var targetOffset = $target.offset().top - 70;
                     console.log(targetOffset);
                     $('html,body')
@@ -63,20 +64,24 @@
                     return false;
                 }
             });
-            $('.menu-icon').click(function () {
+            $('.menu-icon').click(function ()
+            {
                 if ($('#navv-menu li').css('display') == 'none')
                     $('#navv-menu li').css('display', 'block');
                 else if ($('#navv-menu li').css('display') == 'block')
                     $('#navv-menu li').css('display', 'none');
             });
-            $('.menu-icon').on('tap', function () {
+            $('.menu-icon').on('tap', function ()
+            {
                 if ($('#navv-menu li').css('display') == 'none')
                     $('#navv-menu li').css('display', 'block');
                 else if ($('#navv-menu li').css('display') == 'block')
                     $('#navv-menu li').css('display', 'none');
             });
-            $(window).resize(function () {
-                if ($(window).width() > 800) {
+            $(window).resize(function ()
+            {
+                if ($(window).width() > 800)
+                {
                     $('#navv-menu li').css('display', 'block');
                 }
                 else
@@ -85,22 +90,28 @@
         });
     </script>
     <script>
-        function CloseMenu() {
+        function CloseMenu()
+        {
             $('#side-menu').removeClass('visible').addClass('hidden');
         };
-        function OpenMenu() {
+        function OpenMenu()
+        {
             $('#side-menu').removeClass('hidden').addClass('visible');
         }
-        $(function () {
+        $(function ()
+        {
             //Open close menu on click
-            $('#menu-icon').click(function () {
+            $('#menu-icon').click(function ()
+            {
                 if ($('#side-menu').hasClass('visible')) { CloseMenu(); }
                 else { OpenMenu(); };
             });
             //Animations to the menu close button
-            $('.close').mouseenter(function () {
+            $('.close').mouseenter(function ()
+            {
                 $(this).addClass('rotate').removeClass('unrotate');
-            }).mouseleave(function () {
+            }).mouseleave(function ()
+            {
                 $(this).removeClass('rotate').addClass('unrotate');
             });
             $('#side-menu ul li').click(function () { CloseMenu(); });
@@ -112,13 +123,13 @@
     </script>
 </head>
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none; width: 0; height: 0;">
+    @*<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none; width: 0; height: 0;">
         <defs>
             <filter id="svgbg" x="0" y="0">
                 <feColorMatrix in="SourceGraphic" type="saturate" values="0.4"></feColorMatrix>
             </filter>
         </defs>
-    </svg>
+    </svg>*@
     <div id="top-bar" layout="row" layout-align="start center">
         <img src="../../Images/church-logo-white.png" class="logo svglogo" />
     </div>
@@ -169,7 +180,7 @@
                         <li><a href="/beliefs">Our Beliefs</a></li>
                         <li><a href="/leaders">Our Leaders</a></li>
                         @*<li><a href="/movement">Our Movement</a></li>
-                        <li><a href="/kids">Kids Church</a></li>*@
+                            <li><a href="/kids">Kids Church</a></li>*@
                         <li><a href="/ministries">Ministries</a></li>
                     </ul>
                 </div>
@@ -178,22 +189,22 @@
                     <ul id="media">
                         <li><a href="/archive">Sermon Archive</a></li>
                         @*<li><a href="/missions">Missions</a></li>
-                        <li><a href="/resources">Church Resources</a></li>*@
+                            <li><a href="/resources">Church Resources</a></li>*@
                     </ul>
                 </div>
                 @*<div data-layout="column" layout-align="start start">
-                    <h3>Contact Us</h3>
-                    <ul id="contact">
-                        <li><a href="/accepting-jesus">Accepting Jesus</a></li>
-                        <li><a href="/need-prayer">Need Prayer</a></li>
-                        <li><a href="/share-your-story">Share your story</a></li>
-                        <li><a href="/get-baptized">Get Baptized</a></li>
-                        <li><a href="/i-have-a-question">I Have A Question</a></li>
-                    </ul>
-                </div>*@
+                        <h3>Contact Us</h3>
+                        <ul id="contact">
+                            <li><a href="/accepting-jesus">Accepting Jesus</a></li>
+                            <li><a href="/need-prayer">Need Prayer</a></li>
+                            <li><a href="/share-your-story">Share your story</a></li>
+                            <li><a href="/get-baptized">Get Baptized</a></li>
+                            <li><a href="/i-have-a-question">I Have A Question</a></li>
+                        </ul>
+                    </div>*@
             </div>
             <social-links></social-links>
-            <br/>
+            <br />
             <div class='lower-footer'>
                 <span class="xsm-text">C3 Victory Church, Secunderabad. All Rights Reserved. Plot No 90, P&T Colony, Trimulgherry, Hyderabad - 500015, Telangana, India +91 9849189799 <a href="mailto:{{mail_info}}">{{mail_info}}</a></span>
             </div>
@@ -206,7 +217,7 @@
         </div>
     </div>
     <div style="display:none">
-        @RenderBody()
+        @RenderBody();
     </div>
 </body>
 </html>

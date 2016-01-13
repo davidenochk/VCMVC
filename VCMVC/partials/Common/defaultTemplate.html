@@ -1,4 +1,4 @@
-﻿<content-page-template pagename="pagename"></content-page-template>
-<div class="main_content">
-    {{page.content}}
+﻿<content-page-template pagename="{{pagename}}"></content-page-template>
+<div class="content main_content">
+    <div data-ng-bind-html="page.content"></div>
 </div>
