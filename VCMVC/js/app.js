@@ -57,6 +57,10 @@ var version = Math.random() * 1000000;
                 templateUrl: 'partials/About/Ministry.html?v=' + version,
                 controller: "MinistryController"
             })
+            .when('/events', {
+                templateUrl: 'partials/Events/Events.html?v=' + version,
+                controller: "EventsController"
+            })
             //.when('/contact', {
             //    templateUrl: 'partials/Contact/Contact.html?v=' + version,
             //    controller: "ContactController"
@@ -89,9 +93,7 @@ var version = Math.random() * 1000000;
                 controller: function ($scope, data)
                 {
                     var pages = data.pages;
-                    console.log('page name', $scope.pagename);
                     $scope.page = pages.findAll('Name', $scope.pagename.toString())[0];
-                    console.log('page', $scope.page);
                 },
                 scope: {
                     pagename: '@'
@@ -144,16 +146,22 @@ var version = Math.random() * 1000000;
         {
             return {
                 restrict: 'E',
-                template: '<div class="social-share" data-layout="row" data-layout="space-around center"><a target="_blank" ng-click="TwitterShare()">Twitter</a></div>',
-                controller: function ($scope, data)
+                template: '<div class="social-share-dk" data-layout="row" data-layout="space-around center"><span>Share with a friend</span><a target="_blank" ng-click="TwitterShare()"><i class="fa fa-twitter"></i></a><a target="_blank" ng-click="FacebookShare()"><i class="fa fa-facebook"></i></a><a target="_blank" ng-click="GooglePlusShare()"><i class="fa fa-google-plus"></i></a></div>',
+                controller: function ($scope, data, config)
                 {
                     $scope.TwitterShare = function TwitterShare()
                     {
-                        window.open('https://twitter.com/intent/tweet?source=c3victorysecbad&text=' + $scope.sermon.Name + ($scope.sermon.SeriesID ? '+of+' + $scope.series.findAll('ID', $scope.sermon.SeriesID)[0].Name : '') + '+from+%40C3VictorySecbad&url=http://c3victory.in/sermon/' + $scope.sermon.ID + '/');
+                        window.open('https://twitter.com/intent/tweet?source=c3victorysecbad&text=' + $scope.sermon.Name + ' // ' + ($scope.sermon.SeriesID ? '' + $scope.series.findAll('ID', $scope.sermon.SeriesID)[0].Name : '') + '+from+%40C3VictorySecbad&url=http://c3victory.in/sermon/' + $scope.sermon.ID + '/');
                     }
                     $scope.FacebookShare = function FacebookShare()
                     {
-                        window.open('');
+                        //console.log(config.sermonURL);
+                        window.open('https://www.facebook.com/sharer/sharer.php?u=' + 'http://c3victory.in' + config.sermonURL + $scope.sermon.ID, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+                        return false;
+                    }
+                    $scope.GooglePlusShare = function GooglePlusShare()
+                    {
+                        window.open('https://plus.google.com/share?url=' + 'http://c3victory.in' + config.sermonURL + $scope.sermon.ID,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;
                     }
                 }
 

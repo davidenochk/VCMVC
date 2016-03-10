@@ -1,45 +1,34 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <meta charset="utf-8" />
-    <script src="../js/audioplayer.min.js"></script>
-    <script type="text/javascript">
-        $('#listen-button').click(function () {
-            $('#divListen').css('display', 'block');
-        });
-    </script>
-    <meta property="og:title" content="{{sermon.Name}}" ng-if="sermon.Name" />
-    <meta property="og:description" content="{{sermon.About}}" ng-if="sermon.About" />
-    <meta property="og:image" content="{{sermon.Art}}" ng-if="sermon.Art" />
-</head>
-<body>
-    <div id="content-wrap" data-ng-controller="SermonController" data-ng-cloak="">
-        <div class="banner_wrap">
-            <div class="bg mobile-image back-center" data-ng-style="{'background-image': 'url(' + GetArt() + ')'}">
-                <div class="slider_content">
-                </div>
+﻿<script src="../js/audioplayer.min.js"></script>
+<script type="text/javascript">
+    $('#listen-button').click(function ()
+    {
+        $('#divListen').css('display', 'block');
+    });
+</script>
+<div id="content-wrap" data-ng-controller="SermonController" data-ng-cloak="">
+    <div class="banner_wrap">
+        <div class="bg mobile-image back-center" data-ng-style="{'background-image': 'url(' + GetArt() + ')'}">
+            <div class="slider_content">
             </div>
         </div>
-        <div class="banner-margin"></div>
-        <div data-layout="row" data-layout-align="center center" class="listen-wrapper" style="display:none;" id="divListen">
-            
+    </div>
+    <div class="banner-margin"></div>
+    <div data-layout="row" data-layout-align="center center" class="listen-wrapper" style="display:none;" id="divListen">
+
+    </div>
+    <br />
+    <div class="main_content">
+        <div class="lg-text">Sermon : {{sermon.Name}}</div>
+        <div layout="row" layout-padding="" layout-align="center center"><div class="md-text">{{GetSpeakerName(sermon.By)}}</div><div class="md-text">({{sermon.On | dateCustom}})</div></div>
+        <br />
+        <div class="content" data-ng-bind-html="sermonDescription">
         </div>
-        <br/>
-        <div class="main_content">
-            <div class="lg-text">Sermon : {{sermon.Name}}</div>
-            <div layout="row" layout-padding="" layout-align="center center"><div class="md-text">{{GetSpeakerName(sermon.By)}}</div><div class="md-text">({{sermon.On | dateCustom}})</div></div>
-            <br />
-            <div class="content" data-ng-bind-html="sermonDescription">
-            </div>
-            <br />
-            <div data-ng-show="sermon.Audio" data-layout="row" data-layout-sm="column" data-layout-align="center center">
-                <div id="listen-button" class="lg-btn lg-btn-dk" data-ng-click="PlayAudio()">Listen</div>
-                <div class="lg-btn lg-btn-lt" data-ng-click="DownloadSermon()">Download</div>
-            </div>
-            <a data-ng-href="{{sermon.Audio}}" id="download-link"></a>
+        <br />
+        <div data-ng-show="sermon.Audio" data-layout="row" data-layout-sm="column" data-layout-align="center center">
+            <div id="listen-button" class="lg-btn lg-btn-dk" data-ng-click="PlayAudio()">Listen</div>
+            <div class="lg-btn lg-btn-lt" data-ng-click="DownloadSermon()">Download</div>
         </div>
+        <a data-ng-href="{{sermon.Audio}}" id="download-link"></a>
         <social-share></social-share>
     </div>
-</body>
-</html>
+</div>

@@ -1,8 +1,8 @@
 ﻿/*#region variables */
 $base-font-size: 1em;
-$banner-max-height: 450px;
-$banner-min-height: 400px;
-$content-min-height: 400px;
+$banner-max-height: 550px;
+$banner-min-height: 500px;
+$content-min-height: 500px;
 $banner-font-size-lg: $base-font-size*4;
 $banner-font-size-md: $base-font-size*2;
 $banner-font-size-sm: $base-font-size*1;
@@ -10,14 +10,14 @@ $font-size-lg: $base-font-size*3;
 $font-size-md: $base-font-size*2;
 $font-size-sm: $base-font-size*1;
 $font-size-xsm: $base-font-size*0.8;
-$base-vertical-padding: 15px;
+$base-vertical-padding: 10px;
 $base-horizontal-padding: 20px;
 $base-vertical-margin: 10px;
 $base-horizontal-margin: 20px;
 $base-padding: 10px;
 $lg-btn-width: auto;
 $lg-btn-min-width: 200px;
-$banner-margin-top: 400px;
+$banner-margin-top: 500px;
 $footer-padding-top: 150px;
 $white: #fff;
 $white2: #ddd;
@@ -71,6 +71,12 @@ h1, h2, h3, h4, h5, h6 {
             position: relative;
             color: #FFF;
 
+            .lg-text {
+                position: absolute;
+                bottom: 30px;
+                width: 100%;
+            }
+
             .slide {
                 display: block;
                 text-align: center;
@@ -86,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
     text-transform: uppercase;
     line-height: 1;
-    text-align:center;
+    text-align: center;
 }
 
 .md-text {
@@ -94,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-transform: uppercase;
     line-height: 1;
-    text-align:center;
+    text-align: center;
 }
 
 .sm-text {
@@ -102,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     text-transform: uppercase;
     line-height: 1;
-    text-align:center;
+    text-align: center;
 }
 
 .xsm-text {
@@ -110,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     text-transform: uppercase;
     line-height: 1;
-    text-align:center;
+    text-align: center;
 }
 
 .main_content {
@@ -149,8 +155,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-#main-wrap{
-    min-height:700px;
+#main-wrap {
+    min-height: 800px;
 }
 
 #top-bar {
@@ -181,8 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 .upper-footer {
     background-color: $black;
     color: $white;
-    padding: 20px 10%;
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
     padding-top: $footer-padding-top;
 
@@ -198,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .logo {
-        width: 100px;
+        height: 80px;
     }
 
     .social {
@@ -271,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     border-bottom: 1px solid $black;
     font-weight: bold;
-    padding-left: 40px;
+    padding-left: 10px;
     letter-spacing: 0.5px;
 }
 
@@ -329,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
     width: auto;
     position: absolute;
-    left: -130px;
+    left: -90px;
     top: 0;
     margin: 10px;
     cursor: pointer;
@@ -340,7 +345,6 @@ h1, h2, h3, h4, h5, h6 {
     /*border: 1px solid #fff;*/
     border-radius: 3px;
     padding: 5px 10px;
-    background-color: $black;
     padding-bottom: 7px;
     padding-right: 12px;
 }
@@ -352,6 +356,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 5px;
 }
 
+#menu-icon md-icon{
+    height:48px;
+    width:48px;
+}
 @media(max-width:800px) {
     #menu-icon {
         width: 24px;
@@ -429,6 +437,17 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 /*#endregion*/
+
+/*#region bottom-ribbon*/
+.bottom-ribbon{
+    text-align:center;
+    background-color:transparentize($black, 0.2);
+    width:100%;
+    color:$white2;
+    position:absolute;
+    bottom:0;
+    left:0;
+}
 
 /*#region Archive Sermon Styling*/
 .sermons-grid-wrap {
@@ -531,9 +550,9 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.4;
     background-color: $black;
     color: $white;
-    max-width:67px;
-    max-height:68px;
-    margin:auto auto;
+    max-width: 67px;
+    max-height: 68px;
+    margin: auto auto;
 
     &:hover {
         background-color: $white;
@@ -542,6 +561,56 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/*Social Share Start*/
+social-share {
+    text-align: center;
+    display: block;
+    margin-top: 100px;
+    white-space:nowrap;
+}
+
+
+.social-share-dk {
+    border: 4px solid $black;
+
+    a {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+.social-share-lt {
+    border: 4px solid $white;
+
+    a {
+        background-color: $white;
+        color: $black;
+    }
+}
+
+.social-share-dk, .social-share-lt {
+    padding: $base-vertical-padding $base-horizontal-padding;
+    margin: $base-vertical-margin auto;
+    display: inline;
+    width: auto;
+    position: relative;
+    font-weight: bold;
+
+    span {
+        text-transform: uppercase;
+        margin-right: 20px;
+    }
+
+    a {
+        height: $base-vertical-padding * 3;
+        width: auto;
+        font-size: $base-font-size;
+        margin: 0 $base-horizontal-margin / 3;
+        cursor: pointer;
+        padding: $base-vertical-padding/2 $base-horizontal-padding/2;
+    }
+}
+/*Social Share Ends*/
 
 @media(max-width:480px) {
     .sermons-grid-wrap .sermons-grid .sermon-grid-comp {
@@ -673,6 +742,62 @@ h1, h2, h3, h4, h5, h6 {
         border: 3px solid $white;
         background-color: $white;
     }
+}
+
+
+
+@mixin lg-lnk() {
+    white-space: nowrap;
+    padding: $base-vertical-padding $base-horizontal-padding;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    a {
+        @include hyperlink();
+    }
+}
+
+.lg-lnk {
+    @include lg-lnk();
+}
+
+.lg-lnk-lt {
+    color: $white;
+
+    a {
+        color: $white;
+    }
+
+    &:hover {
+        a {
+            color: $white2;
+        }
+    }
+}
+
+.lg-lnk-dk {
+    color: $black;
+
+    a {
+        color: $black;
+    }
+
+    &:hover {
+        a {
+            color: $black2;
+        }
+    }
+}
+
+.ribbon-dk {
+    height: auto;
+    background-color: $black;
+    display: block;
+    text-align: center;
+    padding: $base-vertical-padding $base-horizontal-padding;
+    width: auto;
+    overflow:hidden;
 }
 /*#endregion */
 /*#region Side Headings */
@@ -819,15 +944,16 @@ $banner-767-factor: 1;
     position: relative;
     left: 50px;
     margin: 5px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
-.scripture::before{
-    content:'•';
-    font-size:2em;
-    color:#888888;
-    line-height:1;
-    vertical-align:middle;
-    padding-left:5px;
+
+.scripture::before {
+    content: '•';
+    font-size: 2em;
+    color: #888888;
+    line-height: 1;
+    vertical-align: middle;
+    padding-left: 5px;
 }
 
 .reference a {
@@ -835,8 +961,8 @@ $banner-767-factor: 1;
     border: 1px solid #AAA;
     padding: 5px 10px;
     margin: 10px 10px 5px 10px;
-    text-decoration:none;
-    display:inline-block;
+    text-decoration: none;
+    display: inline-block;
 }
 /*#endregion */
 .table-container {
@@ -872,6 +998,10 @@ td {
     height: 100%;
 }
 /*#region Material Icons*/
+.material-icons.md-12 {
+    font-size: 12px;
+}
+
 .material-icons.md-18 {
     font-size: 18px;
 }
@@ -886,9 +1016,9 @@ td {
 
 .material-icons.md-48 {
     font-size: 48px;
-    height:50px;
-    width:50px;
-    line-height:50px;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
 }
 
 // Rules for using icons as black on a light background.

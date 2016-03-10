@@ -3,11 +3,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shorcut icon" type="image/x-icon" href="../Images/favicon.ico" />
     @RenderSection("META")
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="~/css/core/angular-material.min.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
     <link href="~/css/main.css" rel="stylesheet" />
@@ -42,6 +42,9 @@
 
     <script src="~/partials/Admin/AdminService.js"></script>
     <script src="~/partials/Admin/AdminController.js"></script>
+
+    <script src="~/partials/Events/EventsService.js"></script>
+    <script src="~/partials/Events/EventsController.js"></script>
 
     <script src="~/partials/Contact/ContactController.js"></script>
 
@@ -124,35 +127,54 @@
 </head>
 <body>
     @*<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none; width: 0; height: 0;">
-        <defs>
-            <filter id="svgbg" x="0" y="0">
-                <feColorMatrix in="SourceGraphic" type="saturate" values="0.4"></feColorMatrix>
-            </filter>
-        </defs>
-    </svg>*@
+            <defs>
+                <filter id="svgbg" x="0" y="0">
+                    <feColorMatrix in="SourceGraphic" type="saturate" values="0.4"></feColorMatrix>
+                </filter>
+            </defs>
+        </svg>*@
+    <script>
+        window.fbAsyncInit = function ()
+        {
+            FB.init({
+                appId: '782858475159073',
+                xfbml: true,
+                version: 'v2.5'
+            });
+        };
+
+        (function (d, s, id)
+        {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div id="top-bar" layout="row" layout-align="start center">
         <img src="../../Images/church-logo-white.png" class="logo svglogo" />
     </div>
     <div id="side-menu" class="hidden">
         <div class="close">X</div>
         <div id="menu-icon">
-            <md-icon md-svg-icon="navigation:menu"></md-icon><span>Menu</span>
+            <md-icon md-svg-icon="navigation:menu"></md-icon><span></span>
         </div>
         <ul>
             <li>
-                <a href="/home"><i class="menu-sm-icon material-icons">home</i>Home</a>
+                <a href="/home">Home</a>
             </li>
             <li>
-                <a href="/learn-more"><i class="menu-sm-icon material-icons">info</i>Learn More</a>
+                <a href="/learn-more">Learn More</a>
             </li>
             <li>
-                <a href="/ministries"><i class="menu-sm-icon material-icons">view_headline</i>Ministries</a>
+                <a href="/ministries">Ministries</a>
             </li>
             <li>
-                <a href="/archive"><i class="menu-sm-icon material-icons">tv</i>Sermon Archive</a>
+                <a href="/archive">Sermon Archive</a>
             </li>
             <li>
-                <a href="/contact"><i class="menu-sm-icon material-icons">contact_phone</i>Contact</a>
+                <a href="/contact">Contact</a>
             </li>
         </ul>
         <social-links></social-links>
@@ -219,5 +241,10 @@
     <div style="display:none">
         @RenderBody();
     </div>
+    @*<div class="fb-like"
+         data-share="true"
+         data-width="450"
+         data-show-faces="true">
+    </div>*@
 </body>
 </html>

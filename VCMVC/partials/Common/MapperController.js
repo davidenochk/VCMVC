@@ -10,9 +10,9 @@
         $scope.GetPageDetails = function ()
         {
             progress.inc();
-            $q.all([data.GetPages()]).then(function (res)
+            $q.when(data.GetPages()).then(function (res)
             {
-                $scope.pages = res[0];
+                $scope.pages = res;
                 $scope.page = $scope.pages.findAll('Name', $routeParams.url)[0];
                 console.log($scope.page);
                 if ($scope.page && $scope.page.isLive)

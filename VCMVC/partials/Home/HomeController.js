@@ -1,5 +1,8 @@
 ﻿"use strict";
-
+var Random = function Random(num)
+{
+    return Math.floor(Math.random(1) * num);
+};
 (function ()
 {
     angular.module('vc3app')
@@ -15,7 +18,8 @@
         progress.inc();
         $q.all([HomeService.GetSlides()]).then(function (response)
         {
-            $scope.bg = response[0].findAll('Name', 'home').findAll('isLive', true)[0];
+            var sel = response[0].findAll('Name', 'home').findAll('isLive', true);
+            $scope.bg = sel[Random(sel.length)];
             //$scope.StartSlideShow($scope.slides);
             progress.dec();
         }, function ()

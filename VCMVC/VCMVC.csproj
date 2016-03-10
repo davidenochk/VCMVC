@@ -188,6 +188,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HTMLTagStripper.cs" />
     <Compile Include="Controllers\SermonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -228,6 +229,7 @@
     <Content Include="Images\close_side_menu.png" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon.ico" />
+    <Content Include="Images\IMG_9649.jpg" />
     <Content Include="Images\instagram.png" />
     <Content Include="Images\bgs\POJWide.jpg" />
     <Content Include="Images\pattern.png" />
@@ -274,6 +276,10 @@
     <Content Include="partials\Common\MappedTemplate.html" />
     <Content Include="partials\Common\MapperController.js" />
     <Content Include="partials\Contact\ContactController.js" />
+    <Content Include="partials\Events\invite.html" />
+    <Content Include="partials\Events\events.html" />
+    <Content Include="partials\Events\eventsController.js" />
+    <Content Include="partials\Events\eventsService.js" />
     <Content Include="partials\Home\Home.html" />
     <Content Include="partials\Home\HomeController.js" />
     <Content Include="partials\Home\HomeService.js" />
