@@ -58,7 +58,7 @@ var version = Math.random() * 1000000;
                 controller: "MinistryController"
             })
             .when('/events', {
-                templateUrl: 'partials/Events/Events.html?v=' + version,
+                templateUrl: 'partials/Events/Invite.html?v=' + version,
                 controller: "EventsController"
             })
             //.when('/contact', {
